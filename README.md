@@ -5,6 +5,8 @@ Educational games — เกม Sandbox 2D เพื่อเรียนรู�
 ## เริ่มอ่านที่นี่
 - [สรุปโครงการและเอกสารส่งต่องาน](docs/PROJECT_HANDOFF.md): เป้าหมาย แนวคิด แบบเกม หลักสูตร การประเมิน พอร์ต ภาพ เสียง ระบบเซฟ ข้อตกลง และงานค้าง
 - [ตั้งค่า Windows / VS Code / Node.js และแผนเผยแพร่เว็บ](docs/SETUP_WINDOWS.md)
+- [กติกากิจกรรมต้นแบบ](docs/game-design/PROTOTYPE_RULES.md)
+- [ระบบความยากสามแกน](docs/game-design/DIFFICULTY.md)
 - [แนวทางสำหรับผู้ช่วยในแชทใหม่](AGENTS.md)
 
 ## สถานะ

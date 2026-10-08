@@ -3,8 +3,9 @@
 ## Start here
 1. Read `docs/PROJECT_HANDOFF.md` completely before designing or changing this project.
 2. Read `docs/SETUP_WINDOWS.md` for the development environment and hosting plan.
-3. Inspect the actual repository, branch, working tree and current files. Repository state is authoritative for implemented features; the design document is not evidence that a feature exists.
-4. Preserve the distinction between agreed requirements, proposed details, implemented work, and unresolved decisions.
+3. Read `docs/game-design/PROTOTYPE_RULES.md` and `docs/game-design/DIFFICULTY.md` before activity/assessment changes.
+4. Inspect the actual repository, branch, working tree and current files. Repository state is authoritative for implemented features; the design document is not evidence that a feature exists.
+5. Preserve the distinction between agreed requirements, proposed details, implemented work, and unresolved decisions.
 
 ## Project requirements
 - Current subject: secondary-school mathematics. Prepare extension points for Thai, foreign languages, science and social studies without building those curricula now.
@@ -23,7 +24,7 @@
 - Never commit credentials, personal player saves, `node_modules`, or generated build output. Review current repository rules before edits.
 
 ## Proposed technical direction
-Desktop-browser first; TypeScript + Phaser for the world, HTML/CSS for text-heavy learning/portfolio panels, Vite for development/build, npm for dependencies. Node 24 LTS is the proposed common toolchain. Exact dependency versions and a lockfile are to be selected when scaffolding is authorized.
+Desktop-browser first; TypeScript + Phaser for the world, HTML/CSS for text-heavy learning/portfolio panels, Vite for development/build, npm for dependencies. The user's confirmed starting toolchain is Node 22.19.0 and npm 10.9.3; check package engines when scaffolding. Node 24 is optional, not required. Exact dependency versions and a lockfile are to be selected when scaffolding is authorized.
 Local IndexedDB saves plus export/import first. No player login initially; online identity/sync is later work. Keep grading, reward rules, world logic and subject content separate.
 
 ## Language

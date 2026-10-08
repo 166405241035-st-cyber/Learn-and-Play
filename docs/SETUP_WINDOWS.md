@@ -5,7 +5,7 @@ Updated 9 October 2026. Status: documentation only; this repository does not yet
 ## 1. Common proposed toolchain
 | Tool | Direction |
 | --- | --- |
-| Node.js | 24.x LTS, preferably latest available patch in that LTS line |
+| Node.js | Confirmed starting baseline: 22.19.0; recheck package engines when scaffolding |
 | Package manager | npm bundled with Node; do not mix npm/yarn/pnpm lockfiles |
 | Editor | VS Code |
 | Language | TypeScript |
@@ -16,7 +16,7 @@ Updated 9 October 2026. Status: documentation only; this repository does not yet
 
 Node is a development/build tool here; the player does not install Node to play the published browser game. GitHub stores the source; Pages or another static host serves the built game. No player account/backend is required for the first local-save prototype.
 
-Official Vite guide checked on this date requires Node 20.19+ / 22.12+; Node 24 LTS is our proposed common baseline, not a requirement that the user install exactly the assistant's patch version. Exact package engines must be rechecked when installing.
+Official Vite guide checked on this date requires Node 20.19+ / 22.12+; The user confirmed Node 22.19.0/npm 10.9.3; keep this compatible baseline for starting. Node 24 LTS is an optional later choice. Exact package engines must be rechecked when installing.
 
 ## 2. Inspect your own Windows computer first
 Open VS Code → Terminal → New Terminal. PowerShell is fine. Run:
@@ -32,14 +32,14 @@ where.exe npm
 `npm.cmd` avoids PowerShell choosing npm.ps1 when script execution is restricted; no execution-policy change is necessary for these commands. Send the output to the assistant. Do not send access tokens or passwords.
 
 Interpretation:
-- `v24.x.x`: matches our Node major baseline; check patch/package engines when scaffolding.
-- `v22.12.0` or later in 22.x: may satisfy current Vite, but agree whether to align on 24 LTS.
+- `v24.x.x`: optional supported direction; check patch/package engines when scaffolding.
+- `v22.19.0`: confirmed user baseline; no upgrade requested. Other 22.x at or above 22.12 meets the previously checked Vite minimum.
 - Old Node (for example 18 or 22 below 22.12): update before current Vite.
 - Command not found: install the relevant tool, close/reopen VS Code, retry.
 - Multiple node paths: identify the active install before updating; do not remove paths blindly.
 - npm errors other than a PowerShell script-policy issue: retain the actual message for diagnosis.
 
-The assistant measured Node v24.19.0/npm 11.9.0 on its own environment, not yours. Since the repository has no package.json yet, no existing dependency compatibility/build has been verified.
+User-reported Windows checks: Node 22.19.0, npm 10.9.3, Git 2.55.0.windows.4, Node/npm in C:\\Program Files\\nodejs. The user subsequently confirmed successful cloning after the parent directory was not a Git repository. The clone instructions used C:\\projactLearn-and-Play\\Learn-and-Play; exact final local path was not independently measured. The assistant's Node v24.19.0/npm 11.9.0 is a separate environment. Since the repository has no package.json yet, no existing dependency compatibility/build has been verified.
 
 ## 3. Install if needed
 1. Download Windows Node 24 LTS installer from https://nodejs.org/en/download . Select the architecture matching your computer, typically x64; keep npm/PATH options.
@@ -122,8 +122,8 @@ Do not enable auto-deploy blindly before agreeing when commits should publish. N
 Proposed prototype: no login, IndexedDB, explicit save status, backup export/import. Clearing browser data/private browsing can remove saves. Different browser/profile/host has separate data; export before moving. Online accounts/cross-device sync are later scope. Player saves/identifying data never go into this public repository.
 
 ## 8. User preparation checklist
-- [ ] Run and send Node/npm/Git checks.
-- [ ] Clone/open the correct project in VS Code.
+- [x] User sent Node/npm/Git checks.
+- [x] User confirmed cloning succeeded; verify current terminal path before running commands.
 - [ ] Confirm no local edits are lost during updates.
 - [ ] Keep original external artwork with IDs and usage terms.
 - [ ] Agree prototype rules before coding.

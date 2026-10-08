@@ -1,15 +1,15 @@
 # Learn-and-Play — project handoff and design baseline
 
-Updated: 9 October 2026 (Asia/Bangkok). Design baseline: 0.3. Repository: https://github.com/166405241035-st-cyber/Learn-and-Play
+Updated: 9 October 2026 (Asia/Bangkok). Design baseline: 0.5. Repository: https://github.com/166405241035-st-cyber/Learn-and-Play
 
 ## 1. Purpose of this file
 This is the starting point for a new assistant/chat when the original conversation is unavailable. Read this file, `AGENTS.md`, and the current repository before continuing. This document preserves the user's intent, constraints, proposals, work status and next steps. It is not a claim that the designed game already exists.
 
 ## 2. Current verified repository status
 - At inspection before this documentation change, the public repository used `main` and contained only a 35-byte README (`# Learn-and-Play`, `Educational games`). The connection reported push permission.
-- This change adds documentation only: this handoff, Windows setup guidance, and assistant instructions.
+- Documentation includes this handoff, Windows guidance, assistant instructions, accepted prototype rules and difficulty design. No game implementation yet.
 - No game scaffold, `package.json`, package lock, Phaser scenes, game save system, production assets or deployment workflow has been added by this task.
-- The user's Windows Node/npm versions remain unknown. The assistant execution environment reported Node v24.19.0 and npm 11.9.0; those are not measurements of the user's computer.
+- User confirmed Node 22.19.0, npm 10.9.3, Git 2.55.0.windows.4, Node/npm under C:\\Program Files\\nodejs; clone succeeded after initial parent-directory Git errors. Keep Node 22.19.0 as starting baseline and recheck actual package engines. Assistant environment is separate.
 - A detailed Word report was delivered earlier, but the repository documents should carry the continuing project context. The Word report is not present in this repository unless subsequently added.
 
 ## 3. Original intent and agreed scope
@@ -26,7 +26,7 @@ Future subjects include Thai, foreign languages, science and social studies. Pre
 | --- | --- |
 | Agreed direction | Mathematics first; sandbox freedom; explicit teaching; systematic reasoning; meaningful assessment; portfolio; future subject support |
 | Accepted development direction | Browser game, Phaser + TypeScript, VS Code, separate GitHub repository |
-| Added setup proposal | Vite + npm; Node 24 LTS; exact dependency versions not locked yet |
+| Starting toolchain | Vite + npm proposed; user Node 22.19.0/npm 10.9.3 confirmed; dependency versions not locked |
 | Agreed visual direction | Living 2D angled world; point-and-click and drag placement; two-frame animation baseline |
 | Proposed specifics | Warm community theme, starting map, NPC roles, palette, dimensions, particular rewards and time cycle |
 | Proposed save baseline | No login; IndexedDB with save export/import; online accounts later |
@@ -116,11 +116,11 @@ Given: 4×6 m floor; budget 4,000 fictional coins; activity-specific 10% allowan
 - B: 2 m²/box, 250 coins/box → 14 boxes, 3,500 coins, 28 m² purchased.
 - Both meet budget/coverage. Choice reasoning can involve money remaining and stated preferences. Do not invent quality/durability data.
 - Teach rounding up because purchases are whole boxes. The allowance is an activity condition, not a universal construction standard.
-- Actual floor remains 24 m². Purchased coverage, material consumed, leftovers and required reserve must be represented distinctly. Exact reserve/inventory rules remain to be designed.
+- Actual floor remains 24 m². Purchased coverage, material consumed, leftovers and required reserve must be represented distinctly. Reserve/inventory/refund/reset design is now recorded in [prototype rules](game-design/PROTOTYPE_RULES.md).
 
 Initial assessment: 3×5 m, 10% allowance, budget 2,100; C 1.2 m²/box at 140; D 1.5 m²/box at 180. Required 16.5 m². C: 14 boxes, 1,960; D: 11 boxes, 1,980. Both feasible. Add a changed-context task later.
 
-Stages: choose goal; inspect; plan/learn; compare; purchase; arrange; inspect/revise; assess; reflect; portfolio. Buying/refunds, recovery from overspending, reserve consumption and unlock conditions are unresolved; do not silently invent them during coding.
+Stages: choose goal; inspect; plan/learn; compare; purchase; arrange; inspect/revise; assess; reflect; portfolio. Accepted rule baseline: separate project budget, return sealed boxes at purchase price, opened material cannot be returned, recover placed coverage for experimentation, reset without duplicate rewards. Read [prototype rules](game-design/PROTOTYPE_RULES.md). Numerical mastery thresholds and rubric examples remain unresolved.
 
 ## 11. Progression, rewards and portfolio
 Track separately: world/project state; assessed skills; selected portfolio works. Money, hours, project beauty and random outcomes are not mastery.
@@ -181,9 +181,9 @@ Save: project goals/drafts/layouts; money/inventory/purchases; activity state; a
 Prototype project statuses: draft, active, ready to summarize, portfolio stored, paused. Evidence statuses separate: none, assisted, submitted, checked, partially pending.
 
 ## 16. Next steps in order
-1. User checks Windows Node/npm/Git and clones repository; confirm outputs before asserting compatibility.
-2. Finalize prototype rules: inventory coverage/reserve, budget, refund/recovery, project states, assessment/help/review, reward conditions.
-3. Write activity/data contracts and detailed screen text; review mathematical correctness.
+1. Environment checks and clone completed by user report; verify current terminal when scaffolding.
+2. Read accepted [prototype rules](game-design/PROTOTYPE_RULES.md) and [difficulty design](game-design/DIFFICULTY.md).
+3. Next: write activity/data contracts, save examples and detailed screen text; expand rubric examples and review correctness.
 4. Build asset registry and external-generation prompts; agree a style sample.
 5. When authorized, scaffold Vite/TypeScript/Phaser with placeholder art, pin versions/lockfile, add Node/version configuration and appropriate checks.
 6. Implement one end-to-end slice: explore → plan/lesson → shop → build → assess → portfolio → save/reload.
@@ -194,11 +194,12 @@ Acceptance: player chooses/revises a real goal; reasoning/instruction visible; n
 
 ## 17. Decision log and unresolved questions
 - 9 Oct 2026: repository supplied; documentation/setup task starts; main/public confirmed.
-- Need user Windows runtime output; exact package versions not selected.
+- 9 Oct 2026: user confirmed Windows Node/npm/Git and successful clone. Exact package versions not selected.
 - Theme/map/palette/dimensions remain adjustable.
-- Need refund/resource reserve rules and default undo scope.
+- 9 Oct 2026: prototype rules 0.4 accepted, three difficulty axes accepted as 0.5. Documents added; advanced scenarios are designed, not implemented.
+- Read new detailed docs before activity changes.
 - Need educator review and approach for free-text reasoning.
-- Need exact unlock thresholds and retention schedule.
+- Need exact unlock thresholds, rubric examples and retention schedule. Difficulty should be skill-specific, user-selectable and evidence-based; never silently raise it.
 - Need handling of portfolio screenshots/storage/export.
 - Need preferred art service/reference and asset rights records.
 - Need hosting selection; GitHub Pages is a suitable proposed static prototype route, not yet enabled or deployed.
