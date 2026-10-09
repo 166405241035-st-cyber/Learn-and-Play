@@ -61,3 +61,6 @@ Task snapshot ต้องเก็บ responseKind/graderKind ณ เริ่�
 DimensionResult.evidenceRefs ในตัวอย่างหมายถึง ID ของ assessment ต้นทาง ส่วน Evidence.assessmentAttemptId เชื่อมหลักฐานสรุปกลับไป assessment; อย่าตีความ evidenceRefs เป็น Evidence.id โดยอัตโนมัติ ระยะ runtime ควรเพิ่ม reference แบบระบุชนิดและช่องคำตอบที่ตรวจ
 verdict numeric-fields-correct ยืนยันเฉพาะช่องตัวเลข ไม่ยืนยันคำอธิบายการตรวจครบด้าน calculate-check; ด้านที่ยังไม่มีหลักฐานต้องระบุรอตรวจหรือขอข้อมูลเพิ่ม
 อ่าน [ผลทบทวนและงานถัดไป](CONTINUATION_REVIEW.md) ก่อนเปลี่ยนสัญญานี้เป็นโค้ด
+
+## ข้อมูลเสนอจากหน้าจอและการตรวจครบวงจร
+Objectiveเพิ่มindicatorLinksหลายค่าและprocessReferencesตามFIRST_UNIT_ALIGNMENT; Cartอ้างplanRevisionIdและบอกtotalplanต่างจากยอดเงินlive; assessmentเก็บfeedbackViewedAt/priorExposureและreferenceการเปิดบทระหว่างactiveattempt; numericFieldChecksแยกreasoningReviewStatus; PortfolioWorkเพิ่มdraft/final, previousVersionRefและแผนแรก/จริง; worldgrantมีlocalProfileId/ruleVersion/scopeและsnapshotRefs เพื่อatomicstore/grant ข้อมูลทั้งหมดเป็นdesign ต้องเลือกschema/runtimeversionและปรับfixtureก่อนใช้จริง ไม่อ้างว่าช่องใหม่อยู่ในSAVE_EXAMPLEเดิมแล้ว

@@ -1,6 +1,6 @@
 # Learn-and-Play — project handoff and design baseline
 
-Updated: 9 October 2026 (Asia/Bangkok). Design baseline: 0.6 plus curriculum draft 0.1. Repository: https://github.com/166405241035-st-cyber/Learn-and-Play
+Updated: 9 October 2026 (Asia/Bangkok). Design baseline: 0.6 plus curriculum and prototype detail drafts. Repository: https://github.com/166405241035-st-cyber/Learn-and-Play
 
 ## 1. Purpose of this file
 This is the starting point for a new assistant/chat when the original conversation is unavailable. Read this file, `AGENTS.md`, and the current repository before continuing. This document preserves the user's intent, constraints, proposals, work status and next steps. It is not a claim that the designed game already exists.
@@ -72,7 +72,9 @@ Logical grid: 32×24 cells. x increases east, y south; bounds below are inclusiv
 
 Paths may overlap square areas. Main paths are two cells wide. Interaction points need a reachable standing cell; final collision layout remains to be validated with assets.
 
-Interaction references: planning desk (9,15); storage (9,19); project sign (4,14); shop A (23,14); shop B (27,14); work board (13,10); learning point (7,7); portfolio board (23,6); bench (18,14); personal entrance (11,13).
+The detailed [scene/object specification](game-design/SCENE_OBJECT_SPEC.md) now supersedes interaction coordinates below: shops (23,11)/(27,11), learning (7,6), portfolio (24,5)/(25,5), board stand (13,10). Desk/storage footprints are explicit 2×1. See [top-down map](game-design/SCENE_MAP.svg) and synthetic scene fixture; these are design assets, not game screenshots.
+
+Earlier interaction references for historical comparison: planning desk (9,15); storage (9,19); project sign (4,14); shop A (23,14); shop B (27,14); work board (13,10); learning point (7,7); portfolio board (23,6); bench (18,14); personal entrance (11,13).
 
 ## 8. Curriculum plan and coverage status
 
@@ -207,7 +209,9 @@ Acceptance: player chooses/revises a real goal; reasoning/instruction visible; n
 - 9 Oct 2026 review: comprehensive design and external sample prompts reviewed; A/B, C/D, COMPARE, SHAPE and synthetic balances checked arithmetically. Save envelope now lists plans/evidence; task snapshot and numeric-verdict scope clarified. No artwork or educator validation performed.
 - 9 Oct 2026 curriculum steering: user requested more detailed mathematical curriculum and a clear connection to actual play. Added source-index map, detailed 8-objective first unit, lesson/practice/assessment/portfolio links and untimed session/difficulty design. Screens/scaffold remain later work. Free-text review, indicator mapping, mastery thresholds and time estimates still need validation.
 - 9 Oct 2026 next continuation: full IPST guide excerpts checked for primary prerequisites and M1 links; [first-unit alignment](curriculum/FIRST_UNIT_ALIGNMENT.md) records partial coverage and process support, and [response/grading specification](curriculum/FIRST_UNIT_ASSESSMENT.md) adds unit/decimal/whole-box checkpoints and structured C/D fields. Decimal-divisor instruction clarified; numeric checks stay separate from pending reasoning. No educator approval or runtime result claimed.
-- Next concrete work: design plan/assessment screens using FIRST_UNIT_ASSESSMENT fields and review content with an educator. Broader curriculum mapping remains pending. External art sample may proceed independently. When implementation is explicitly requested, follow the staged slice in CONTINUATION_REVIEW; placeholder coding does not depend on final art.
+- 9 Oct 2026 expanded design: user requested completing as much of ordered items 1–8 as possible, with change-impact reporting. Items 1–6 now detailed: [screens](ui/PROTOTYPE_SCREEN_DESIGN.md), [scene/object](game-design/SCENE_OBJECT_SPEC.md), [production](art-audio/PROTOTYPE_PRODUCTION.md), [external prompts](../asset-prompts/prototype/PROTOTYPE_PROMPTS.md), [cases/roadmap/change impact](roadmap/DESIGN_REVIEW_AND_CHANGE_IMPACT.md). Added precise SVG/JSON scene design. Static map reachability/arithmetic/links checked in scratch; no runtime/pilot claimed.
+- Proposed detail decisions: whole-floor place/remove initially; four logical furniture directions; prior help/exposure tracked across panels; numeric field checks separate from reasoning; one first-world-decoration grant per local profile; knowledge grants disabled pending reviewed criteria. External artwork remains ungenerated.
+- Next concrete work: user review/corrections using impact matrix, educator review of first-unit content, external five-image style sample. When explicitly instructed to code, start S0/S1 through S6 from roadmap. No game implementation begun in this design round. Broader curriculum mapping remains pending. External art sample may proceed independently. When implementation is explicitly requested, follow the staged slice in CONTINUATION_REVIEW; placeholder coding does not depend on final art.
 - Need educator review and approach for free-text reasoning.
 - Need exact unlock thresholds, rubric examples and retention schedule. Difficulty should be skill-specific, user-selectable and evidence-based; never silently raise it.
 - Need handling of portfolio screenshots/storage/export.

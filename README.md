@@ -6,6 +6,8 @@
 
 เริ่มอ่าน [PROJECT_HANDOFF](docs/PROJECT_HANDOFF.md), [AGENTS](AGENTS.md) และ [SETUP_WINDOWS](docs/SETUP_WINDOWS.md)
 
+- [แบบหน้าจอครบวงจร](docs/ui/PROTOTYPE_SCREEN_DESIGN.md), [ผังและวัตถุ](docs/game-design/SCENE_OBJECT_SPEC.md), [แผนที่มุมบน](docs/game-design/SCENE_MAP.svg)
+- [รายการภาพ/เสียง](docs/art-audio/PROTOTYPE_PRODUCTION.md) และ [ตรวจแบบ/ผลกระทบการแก้](docs/roadmap/DESIGN_REVIEW_AND_CHANGE_IMPACT.md)
 - [ตัวชี้วัดชุดแรก](docs/curriculum/FIRST_UNIT_ALIGNMENT.md) และ [ช่องคำตอบ/การตรวจ](docs/curriculum/FIRST_UNIT_ASSESSMENT.md)
 - [แผนหลักสูตรคณิตศาสตร์](docs/curriculum/CURRICULUM_MAP.md), [ชุดการเรียนแรก](docs/curriculum/FIRST_LEARNING_UNIT.md) และ [การเชื่อมการเล่น](docs/curriculum/LEARNING_GAMEPLAY.md)
 - [ผลตรวจสถานะและงานพัฒนาถัดไป](docs/technical/CONTINUATION_REVIEW.md)

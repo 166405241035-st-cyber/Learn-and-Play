@@ -13,7 +13,9 @@ Expected: player-idle.png, player-walk-se-01.png, player-walk-se-02.png
 Expected: grass-tile.png
 
 ## OBJ-001
-“Create a small friendly wooden planning desk, southeast view in matching 2:1 angled projection. [shared style]. One object only,256×256 canvas, base anchor(128,224), logical footprint2×1 cells. No lettering, no ruler numbers, no human, separate shadow.”
-Expected: desk.png
+“Create a small friendly wooden planning desk, logical south-facing front visible toward screen southwest in matching 2:1 angled projection. [shared style]. One object only,256×256 canvas, base anchor(128,224), logical footprint2×1 cells. No lettering, no ruler numbers, no human, separate shadow.”
+Expected: desk-s.png (previous draft name: desk.png; no existing artwork is claimed)
 
 เครื่องมือสร้างอาจไม่รักษาขนาด/anchor ตามข้อความ ต้องตรวจและปรับภายนอกก่อนอนุมัติ ไม่ถือว่า ready เท่ากับ approved ใช้ sample สรุปสไตล์ก่อนเขียนพร็อมป์ครบชุด
+
+Full prototype production uses [specification](../../docs/art-audio/PROTOTYPE_PRODUCTION.md) and [per-asset prompts](../prototype/PROTOTYPE_PROMPTS.md). Character screen-SE is distinct from furniture logical-south/screen-SW. Contact shadows in the first runtime prototype are drawn by code; do not bake them into these samples.
