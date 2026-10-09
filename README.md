@@ -6,6 +6,7 @@
 
 เริ่มอ่าน [PROJECT_HANDOFF](docs/PROJECT_HANDOFF.md), [AGENTS](AGENTS.md) และ [SETUP_WINDOWS](docs/SETUP_WINDOWS.md)
 
+- [ผลตรวจสถานะและงานพัฒนาถัดไป](docs/technical/CONTINUATION_REVIEW.md)
 - [แบบออกแบบครบวงจร](docs/game-design/COMPREHENSIVE_DESIGN.md)
 - [กติกาต้นแบบ](docs/game-design/PROTOTYPE_RULES.md) และ [ความยาก](docs/game-design/DIFFICULTY.md)
 - [สัญญาข้อมูล](docs/technical/DATA_CONTRACTS.md) และ [เซฟ/กู้คืน](docs/technical/SAVE_DESIGN.md)
