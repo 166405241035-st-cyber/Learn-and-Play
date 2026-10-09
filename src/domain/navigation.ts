@@ -4,12 +4,14 @@ export const SCENE = layout;
 export type Cell = readonly [number, number];
 export const key = ([x, y]: Cell) => `${x},${y}`;
 export const inside = (x: number, y: number, rect: { x: number; y: number; width: number; height: number }) => x >= rect.x && x < rect.x + rect.width && y >= rect.y && y < rect.y + rect.height;
-export function walkable([x, y]: Cell) {
-  return Number.isInteger(x) && Number.isInteger(y) && x >= 0 && y >= 0 && x < SCENE.grid.width && y < SCENE.grid.height && !SCENE.staticObjects.some(object => inside(x, y, object));
+export interface Blocker { x: number; y: number; width: number; height: number }
+function accessible([x, y]: Cell, blockers: readonly Blocker[] = [], bounds?: Blocker) {
+  return Number.isInteger(x) && Number.isInteger(y) && x >= 0 && y >= 0 && x < SCENE.grid.width && y < SCENE.grid.height && !SCENE.staticObjects.some(object => inside(x, y, object)) && !blockers.some(object => inside(x, y, object)) && (!bounds || inside(x, y, bounds));
 }
-export function findPath(start: Cell, targets: readonly Cell[]): Cell[] | null {
-  const goals = new Set(targets.filter(walkable).map(key));
-  if (!walkable(start) || !goals.size) return null;
+export const walkable = (cell: Cell) => accessible(cell);
+export function findPath(start: Cell, targets: readonly Cell[], blockers: readonly Blocker[] = [], bounds?: Blocker): Cell[] | null {
+  const goals = new Set(targets.filter(cell => accessible(cell, blockers, bounds)).map(key));
+  if (!accessible(start, blockers, bounds) || !goals.size) return null;
   const queue: Cell[] = [start];
   const parent = new Map<string, Cell | null>([[key(start), null]]);
   for (let i = 0; i < queue.length; i++) {
@@ -20,7 +22,7 @@ export function findPath(start: Cell, targets: readonly Cell[]): Cell[] | null {
       return path;
     }
     for (const next of [[cell[0] + 1, cell[1]], [cell[0] - 1, cell[1]], [cell[0], cell[1] + 1], [cell[0], cell[1] - 1]] as Cell[]) {
-      if (walkable(next) && !parent.has(key(next))) { parent.set(key(next), cell); queue.push(next); }
+      if (accessible(next, blockers, bounds) && !parent.has(key(next))) { parent.set(key(next), cell); queue.push(next); }
     }
   }
   return null;

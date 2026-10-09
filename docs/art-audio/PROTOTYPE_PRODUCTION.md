@@ -79,3 +79,7 @@ dircharacterเป็นทิศจอ ne/se/sw/nw ไม่ใช่logical n/
 ## 5. สิ่งที่ใช้โค้ดแทนbitmap
 
 แปลนแม่นยำ grid/axes labelราคา/สูตร/หน่วย graph ปุ่ม card ลูกศร status focusoutline occupancy preview selection route และcontactshadow UIทั้งหมดอ่านได้เมื่อเพิ่มขนาดตัวอักษร ไม่มีการสร้างภาพสูตรคณิตศาสตร์หรือเลขเฉลยไว้ในsprite
+
+## ใบงานแก้/เพิ่มสำหรับชุดคอมมิช
+
+ใช้ [เอกสารส่งงาน](ART_REPAIR_WORK_ORDER.md) และ [พร็อมป์แก้พร้อมชื่อไฟล์](../../asset-prompts/prototype/ART_REPAIR_AND_MISSING_PROMPTS.md) เริ่มจากชุดเล็กก่อนชุดเต็ม ค่าสเปกเดิมเป็นฐาน การเปลี่ยนcanvas/anchorต้องบันทึกและตรวจจริงก่อนผูก runtime

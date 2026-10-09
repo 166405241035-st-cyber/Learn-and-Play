@@ -2,18 +2,20 @@
 
 Updated: 9 October 2026 (Asia/Bangkok). Design baseline: 0.6 plus curriculum and prototype detail drafts. Repository: https://github.com/166405241035-st-cyber/Learn-and-Play
 
-## Latest user direction — design before further code
+## Latest user direction — accepted implementation
 
-9 October 2026: user clarified that the seven game-experience corrections require a systematic numbered plan, references from other games, and GitHub documentation before runtime changes. Current round is documentation only. Read [GAME_EXPERIENCE_REDESIGN_PLAN](ui/GAME_EXPERIENCE_REDESIGN_PLAN.md): implemented-versus-proposed inventory, references, seven design specifications, tutorial storyboard, acceptance cases, implementation dependencies and change-impact matrix. The existing prototype is retained; earlier changes are history, not approval of the final design. Next: user corrections and detailed wireframes (D6–D7); do not resume S3 or other runtime work without a new explicit instruction. External art remains user-produced; no bulk image production authorized.
+9 October 2026: user selected E1 + E2 + E5 and preparation of E6, explicitly instructed implementing the seven-point redesign, and requested documents with prompts for image corrections/additions. This supersedes the earlier docs-only pause. See [ACCEPTED_GAME_UI_IMPLEMENTATION](ui/ACCEPTED_GAME_UI_IMPLEMENTATION.md) for verified runtime and limits, and [ART_REPAIR_WORK_ORDER](art-audio/ART_REPAIR_WORK_ORDER.md) for the external image workflow. Existing 33 PNG originals are preserved; image integration remains pending corrections. E3/E4/E7–E10 remain unselected.
 
-Latest follow-up: user requested optional features beyond the seven revisions and review of commissioned art against our prompts. See [OPTIONAL_GAME_FEATURES_AND_ART_REVIEW](ui/OPTIONAL_GAME_FEATURES_AND_ART_REVIEW.md). E1–E10 are unselected proposals; some expand existing planned features. A concurrent GitHub upload (ccf608f) added 33 PNGs. Files were fetched and preflight-reviewed: see [COMMISSIONED_ART_REVIEW](art-audio/COMMISSIONED_ART_REVIEW.md). Alpha is present in all files; 10 canvases differ from experimental specs; tiles, frame consistency, directions and building registration need correction. Original art is preserved. Documented code impacts updated; no runtime integration, approval or rights confirmation claimed.
+Implemented this round: furniture footprint/front/access validation, in-world preview and confirmation, move/store/undo/redo, dynamic walking blockers, A/B comparison using player quantities, searchable help, expanded actual-action tutorial, measure/focus tools, foreground fade and settings improvements. Plan revisions now preserve resource/layout/practice-help context and a first/latest comparison, preparing E6 without claiming a complete portfolio. Test/build/browser checks are recorded in the implementation document. No permanent save, assessment/rewards, final art/audio, hosting or teacher validation.
+
+Current next work: user playtest corrections and external sample repair/review; do not treat further optional features as selected. Assessment/portfolio/save remain the deferred full-slice backlog.
 
 ## 1. Purpose of this file
 This is the starting point for a new assistant/chat when the original conversation is unavailable. Read this file, `AGENTS.md`, and the current repository before continuing. This document preserves the user's intent, constraints, proposals, work status and next steps. It is not a claim that the designed game already exists.
 
 ## 2. Current verified repository status
 
-**Latest user correction:** user found the prototype looked like a teaching website and requested 7 gameplay/UI changes. Implemented viewport game shell, floating/collapsible project HUD, toolbelt, actual-action tutorial, close character-follow camera, four 90-degree views, in-game settings/fullscreen, updated placeholder geometry and physical pathfinding. See [game UI revision and dependent changes](ui/GAME_UI_REVISION.md). Actual PNG integration, furniture, assessment/portfolio/rewards and save remain pending.
+**Latest user correction:** user found the prototype looked like a teaching website and requested 7 gameplay/UI changes. Implemented viewport game shell, floating/collapsible project HUD, toolbelt, actual-action tutorial, close character-follow camera, four 90-degree views, in-game settings/fullscreen, updated placeholder geometry and physical pathfinding. See [game UI revision and dependent changes](ui/GAME_UI_REVISION.md). Actual PNG integration, assessment/portfolio/rewards and save remain pending; furniture is now implemented as noted above.
 
 **Latest implementation continuation (9 Oct):** user reviewed design and instructed planning plus execution of the next step. Prototype coding is authorized. Added pinned Vite/TypeScript/Phaser scaffold, transactional in-memory project logic, BFS/click movement and placeholder angled world, guided plan/8 lessons/cart/shop/floor/refund/reset UI. See [first prototype status and next plan](roadmap/FIRST_PROTOTYPE_PROGRESS.md). No furniture placement, assessment, portfolio, reward, durable save, final art/audio or hosting yet. The historical entries below describe earlier inspections.
 
@@ -44,7 +46,7 @@ Future subjects include Thai, foreign languages, science and social studies. Pre
 | Proposed specifics | Warm community theme, starting map, NPC roles, palette, dimensions, particular rewards and time cycle |
 | Proposed save baseline | No login; IndexedDB with save export/import; online accounts later |
 | User production preference | Generate artwork externally; write specifications/prompts in GitHub before producing many assets |
-| Not implemented | Furniture placement, assessment/portfolio/rewards, durable save, final art/audio, hosting and full curriculum |
+| Not implemented | Assessment/full portfolio/rewards, durable save, final art/audio, hosting and full curriculum |
 
 The user expects the assistant to design proactively, accept corrections, and point out conflicts with earlier goals. The initial task authorized documentation/setup. After reviewing design, the user authorized the next prototype implementation step; continue staged development within that scope.
 
@@ -199,7 +201,7 @@ Prototype project statuses: draft, active, ready to summarize, portfolio stored,
 
 ## 16. Next steps in order
 
-**Current next action:** review/refine [GAME_EXPERIENCE_REDESIGN_PLAN](ui/GAME_EXPERIENCE_REDESIGN_PLAN.md), then produce detailed wireframes before further coding. S3–S5 in [FIRST_PROTOTYPE_PROGRESS](roadmap/FIRST_PROTOTYPE_PROGRESS.md) remain the deferred implementation backlog. Earlier milestones below are historical context, not current authorization.
+**Current next action:** use [ACCEPTED_GAME_UI_IMPLEMENTATION](ui/ACCEPTED_GAME_UI_IMPLEMENTATION.md) to playtest and review corrected external art samples. Furniture/E1, E2, E5 and E6 preparation are now implemented; full S4/S5 remain backlog. Earlier design-only milestones below are historical.
 
 
 Comprehensive continuation: [end-to-end design 0.6](game-design/COMPREHENSIVE_DESIGN.md). Covers player journey, sandbox interactions, explicit lessons, assessment/pending review, portfolio, resources, art workflow, saves, extension and staged acceptance. All remain design.

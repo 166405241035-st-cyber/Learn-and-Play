@@ -64,3 +64,7 @@ verdict numeric-fields-correct ยืนยันเฉพาะช่องต�
 
 ## ข้อมูลเสนอจากหน้าจอและการตรวจครบวงจร
 Objectiveเพิ่มindicatorLinksหลายค่าและprocessReferencesตามFIRST_UNIT_ALIGNMENT; Cartอ้างplanRevisionIdและบอกtotalplanต่างจากยอดเงินlive; assessmentเก็บfeedbackViewedAt/priorExposureและreferenceการเปิดบทระหว่างactiveattempt; numericFieldChecksแยกreasoningReviewStatus; PortfolioWorkเพิ่มdraft/final, previousVersionRefและแผนแรก/จริง; worldgrantมีlocalProfileId/ruleVersion/scopeและsnapshotRefs เพื่อatomicstore/grant ข้อมูลทั้งหมดเป็นdesign ต้องเลือกschema/runtimeversionและปรับfixtureก่อนใช้จริง ไม่อ้างว่าช่องใหม่อยู่ในSAVE_EXAMPLEเดิมแล้ว
+
+## Implemented preparation for E6 (9 Oct 2026)
+
+Runtime `PlanRevision` in src/domain/project.ts stores immutable copies of plan, savedAt and context{remaining,floorMaterial,layout,helpUsed}. Attempts also hold layout/undo/redo and practice lesson IDs. This is an in-memory prototype shape, not the final persistence envelope, assessment help contract or a validated import format. Preserve snapshots when adding S4/S5; do not label this as a full portfolio or mastery record.

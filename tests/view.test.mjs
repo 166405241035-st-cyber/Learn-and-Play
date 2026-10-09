@@ -35,7 +35,9 @@ test('tutorial advances from actual actions, supports non-linear play and replay
   tutorial.record('welcome'); assert.equal(tutorial.index, 1);
   tutorial.record('moved'); assert.equal(tutorial.index, 2);
   tutorial.record('plan-opened'); assert.equal(tutorial.index, 3);
-  tutorial.record('plan-saved'); assert.equal(tutorial.index, 5);
+  tutorial.record('plan-saved'); assert.equal(tutorial.index, 4);
+  tutorial.record('lesson-returned'); assert.equal(tutorial.index, 5);
+  tutorial.record('purchase-reviewed'); assert.equal(tutorial.index, 7);
   tutorial.record('floor-placed'); assert.equal(tutorial.index, TUTORIAL_STEPS.length);
   tutorial.replay(); assert.equal(tutorial.index, 0);
 });

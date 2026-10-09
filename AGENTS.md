@@ -14,7 +14,7 @@
 - Separate world success, assessed mastery, and portfolio evidence. Never infer mastery from money, play time, appearance, or a lucky random outcome.
 - Keep basic learning assistance accessible. Record hints/tools used in assessments. Pending review is not confirmed mastery.
 - User generates artwork externally. Maintain asset specifications and prompts in GitHub; do not bulk-generate artwork unless requested.
-- Earlier on 9 October 2026, the user authorized the initial placeholder prototype. Latest clarification supersedes continuation authorization: for the seven game-experience corrections, research and document a systematic design BEFORE further runtime edits. Current scope is documentation only; preserve the existing prototype and wait for a new explicit implementation instruction after design review. Read `docs/ui/GAME_EXPERIENCE_REDESIGN_PLAN.md`; next work is design review and detailed wireframes, not automatic S3 implementation. Hosting, online accounts and paid services remain outside this scope.
+- Latest instruction on 9 October 2026: user selected E1 + E2 + E5 and preparation of E6, and explicitly instructed implementation of the seven-point game redesign. Runtime implementation in this scope is now authorized; the earlier docs-only pause is historical. Read `docs/ui/ACCEPTED_GAME_UI_IMPLEMENTATION.md` for actual status. Write correction/missing-image prompts in project docs; external artwork production remains the user workflow. Do not add unselected E3/E4/E7–E10, hosting, accounts or paid services automatically.
 
 ## Continuity
 - Update the handoff's current status, next actions and decision log after meaningful changes.

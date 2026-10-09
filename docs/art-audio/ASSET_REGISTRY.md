@@ -22,3 +22,7 @@
 ## รายการละเอียดฉบับต่อยอด
 [PROTOTYPE_PRODUCTION](PROTOTYPE_PRODUCTION.md) ระบุcanvas/anchor/footprint/filenameครบขั้นต่ำ83ภาพuniqueและ10เสียง; [พร็อมป์prototype](../../asset-prompts/prototype/PROTOTYPE_PROMPTS.md) เขียนแล้ว สถานะภาพที่มีpromptในฉบับนี้คือreadyเท่านั้น เสียงยังเป็นspec pending source ไม่มีไฟล์จริงapproved/integrated ขนาดรวมและlogicalfrontดูSCENE_OBJECT_SPEC
 ชื่อsampledesk-s.pngเดิมยังไม่มีไฟล์จริง ใช้ชื่อเป้าหมายdesk-s.pngตามlogicalsouth/SWในการผลิตใหม่ ทิศcharacterยังใช้screenSEไม่ต้องเปลี่ยน
+
+## ใบงานแก้ภาพหลังผู้ใช้สั่งพัฒนา
+
+[ART_REPAIR_WORK_ORDER](ART_REPAIR_WORK_ORDER.md) และ [พร็อมป์ฉบับแก้](../../asset-prompts/prototype/ART_REPAIR_AND_MISSING_PROMPTS.md) ระบุไฟล์อ้างอิงและรายการมุม/เฟรมที่ขาด ภาพยัง incoming ไม่มี approved/integrated เพิ่มในรอบโค้ดนี้

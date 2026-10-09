@@ -103,3 +103,26 @@ details { margin-top: 1rem; } summary { cursor: pointer; min-height: 44px; }
 .top-actions svg { width: 21px; height: 21px; vertical-align: middle; }
 .game-brand .eyebrow, .game-brand .location { display: block; line-height: 1.4; }
 @media (max-width: 720px) { .game-brand .location { display: none; } }
+
+/* In-world tools share the notebook's warm workshop language. */
+.next-action { padding: 8px 10px; border-radius: 8px; background: #e4d6ae; border-left: 4px solid #64815a; font-weight: 700; }
+.comparison { padding: 1rem; border: 2px solid #c7b17d; border-radius: 14px; background: #f2e8d0; }
+.comparison-cards { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .75rem; }
+.comparison-cards article { padding: .75rem; border-radius: 10px; background: #fffaf0; border: 1px solid #d7c69d; min-width: 0; }
+.comparison-cards .stats div { display: block; } .comparison-cards .stats dd { text-align: left; }
+.comparison-cards p { font-size: .75rem; }
+.help-results { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .75rem; }
+.help-results button { text-align: left; background: #fff1d6; color: #31533e; padding: 1rem; }
+.help-results button .small { display: block; margin-top: .5rem; }
+.revision-card, .furniture-sheet { padding: 1rem; background: #f1e8d5; border-radius: 14px; border: 1px solid #cdb88a; margin-bottom: 1rem; }
+.table-scroll { overflow-x: auto; }
+.placement-fields { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: .5rem; }
+.placed-row { display: flex; gap: .5rem; justify-content: space-between; align-items: center; padding: .5rem 0; border-bottom: 1px solid #d2c3a7; }
+#placement-bar { position: absolute; left: 50%; bottom: 112px; transform: translateX(-50%); width: min(600px,calc(100vw - 32px)); background: #fff5df; border: 2px solid #bda06a; padding: 12px 18px; border-radius: 16px; box-shadow: 0 8px 24px #1c352e55; max-height: 50dvh; overflow: auto; font-size: .75rem; z-index: 3; }
+#placement-bar p { margin: 6px 0; } #placement-bar .actions { margin: 8px 0; }
+#placement-bar .small { font-size: .65rem; }
+.game-shell:has(#placement-bar) .tutorial-card, .game-shell:has(#placement-bar) .world-toast { display: none; }
+.reading-sample { padding: 1rem; background: #efe3c8; border-radius: 10px; }
+.reduce-motion *, .reduce-motion *::before, .reduce-motion *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+@media (max-width: 900px) { .comparison-cards, .help-results { grid-template-columns: 1fr; } }
+@media (max-width: 720px) { #placement-bar { bottom: 122px; font-size: .7rem; } .panel-header { flex-wrap: wrap; gap: .4rem; } .panel-header > div { flex: 1 1 55%; } .placed-row { flex-wrap: wrap; } }

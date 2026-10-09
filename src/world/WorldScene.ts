@@ -1,9 +1,10 @@
+import { footprint, frontCells, FURNITURE, proposedLayout, validateLayout, type Placement } from '../domain/furniture';
 import Phaser from 'phaser';
 import { SCENE, findPath, inside, type Cell } from '../domain/navigation';
 import { viewProject, viewUnproject, normalizeTurn, screenDirection, type ViewTurn, type LogicalDirection } from '../domain/view';
 import { MATERIALS, type MaterialId } from '../content/first-project';
 
-export type Destination = 'plan' | 'lesson' | 'shop' | 'build' | 'future' | 'settings';
+export type Destination = 'plan' | 'lesson' | 'shop' | 'build' | 'future' | 'settings' | 'help';
 const labels: Record<string, string> = {
   'BUILD-003': 'ศูนย์เรียนรู้', 'BUILD-001': 'ร้านวัสดุ A', 'BUILD-002': 'ร้านวัสดุ B',
   'OBJ-006': 'พอร์ต', 'OBJ-005': 'กระดานงาน', 'OBJ-004': 'ม้านั่ง',
@@ -13,6 +14,7 @@ const destinations: Record<string, Destination> = {
   'BUILD-003': 'lesson', 'BUILD-001': 'shop', 'BUILD-002': 'shop', 'OBJ-006': 'future',
   'OBJ-005': 'future', 'OBJ-001': 'plan', 'OBJ-002': 'build', 'OBJ-003': 'build',
 };
+const rightWidth = (points: {x:number;y:number}[]) => Math.max(...points.map(p=>p.x))-Math.min(...points.map(p=>p.x));
 export class WorldScene extends Phaser.Scene {
   private ground!: Phaser.GameObjects.Graphics;
   private actor!: Phaser.GameObjects.Graphics;
@@ -24,18 +26,24 @@ export class WorldScene extends Phaser.Scene {
   private route: Cell[] = [];
   private afterWalk: (() => void) | null = null;
   private facing: LogicalDirection = 'S';
+  private measured = false;
   private floorMaterial: MaterialId | null = null;
   private modalOpen = false;
   private reduceMotion = false;
   private textScale = 1;
   private turn: ViewTurn = 0;
   private target: Cell | null = null;
+  private buildingShapes: { shape: Phaser.GameObjects.Graphics; centreX: number; baseY: number; width: number }[] = [];
+  private layout: Placement[] = [];
+  private preview: Placement | null = null;
+  private previewGraphics!: Phaser.GameObjects.Graphics;
+  private onPreview: (cell: Cell) => void;
   private openPanel: (destination: Destination) => void;
   private announce: (message: string) => void;
   private onMoved: () => void;
 
-  constructor(openPanel: (destination: Destination) => void, announce: (message: string) => void, onMoved: () => void) {
-    super('world'); this.openPanel = openPanel; this.announce = announce; this.onMoved = onMoved;
+  constructor(openPanel: (destination: Destination) => void, announce: (message: string) => void, onMoved: () => void, onPreview: (cell: Cell) => void) {
+    super('world'); this.openPanel = openPanel; this.announce = announce; this.onMoved = onMoved; this.onPreview = onPreview;
   }
   private point(x: number, y: number) { return viewProject(x, y, this.turn); }
   create() {
@@ -43,29 +51,67 @@ export class WorldScene extends Phaser.Scene {
     this.routeGraphics = this.add.graphics().setDepth(-9999);
     this.marker = this.add.graphics().setDepth(10000);
     this.actor = this.add.graphics();
+    this.previewGraphics = this.add.graphics().setDepth(10001);
     this.redraw(); this.drawActor(0); this.follow();
     this.input.on('pointerdown', (pointer: Phaser.Input.Pointer) => {
       if (this.modalOpen || !pointer.leftButtonDown()) return;
       const p = this.cameras.main.getWorldPoint(pointer.x, pointer.y);
       const logical = viewUnproject(p.x, p.y, this.turn);
       const target: Cell = [Math.floor(logical.x), Math.floor(logical.y)];
+      if (this.preview) { this.onPreview(target); return; }
+      const placed = this.layout.find(item => inside(target[0], target[1], footprint(item)));
+      if (placed) {
+        this.walkTo(frontCells(placed), () => this.announce(`${FURNITURE.find(s => s.id === placed.id)!.label} · ใช้เครื่องมือจัดของเพื่อย้าย/หมุน/เก็บ`)); return;
+      }
       const object = SCENE.staticObjects.find(item => inside(target[0], target[1], item));
       if (object?.interactionCells.length) this.goTo(object.id);
       else this.walkTo([target]);
+    });
+    this.input.on('pointermove', (pointer: Phaser.Input.Pointer) => {
+      if (!this.preview || this.modalOpen) return;
+      const p = this.cameras.main.getWorldPoint(pointer.x, pointer.y), logical = viewUnproject(p.x, p.y, this.turn);
+      this.onPreview([Math.floor(logical.x), Math.floor(logical.y)]);
     });
     this.scale.on('resize', this.follow, this);
     this.events.once('shutdown', () => this.scale.off('resize', this.follow, this));
   }
   private follow() {
     if (!this.actor) return;
-    this.cameras.main.setZoom(0.95).startFollow(this.actor, false, this.reduceMotion ? 1 : 0.14, this.reduceMotion ? 1 : 0.14, 0, 40);
+    this.cameras.main.setZoom(0.95).startFollow(this.actor, false, this.reduceMotion ? 1 : 0.14, this.reduceMotion ? 1 : 0.14, this.scale.width >= 1000 ? -80 : 0, 40);
     this.cameras.main.centerOn(this.actor.x, this.actor.y - 40);
+  }
+  public getCell(): Cell { return [Math.floor(this.position.x), Math.floor(this.position.y)]; }
+  public setLayout(layout: Placement[]) {
+    this.layout = structuredClone(layout);
+    if (this.ground) {
+      if (this.route.length) { this.cell=this.getCell(); this.route = []; this.afterWalk = null; this.target = null; this.announce('ผังเปลี่ยนแล้ว คลิกปลายทางใหม่เพื่อเดิน'); }
+      this.redraw();
+    }
+  }
+  public setPreview(item: Placement | null) {
+    this.preview = item;
+    if (item) { this.cell=this.getCell(); this.route = []; this.afterWalk = null; this.target = null; this.drawRoute(); this.focusFloor(); }
+    this.drawPreview();
+  }
+  public measureFloor() { this.measured = true; this.redraw(); this.focusFloor(); this.announce('พื้นจริงกว้าง 4 เมตร × ยาว 6 เมตร · ดูหน่วยและสูตรในสมุดแผน'); }
+  private focusFloor() {
+    if (!this.actor) return;
+    const f = SCENE.projectFloor, p = this.point(f.x + f.width / 2, f.y + f.height / 2);
+    this.cameras.main.stopFollow().centerOn(p.x, p.y - 40);
+  }
+  private drawPreview() {
+    if (!this.previewGraphics) return; this.previewGraphics.clear();
+    if (!this.preview) return;
+    const r = footprint(this.preview), error = validateLayout(proposedLayout(this.layout, this.preview), this.getCell());
+    const pts = [this.point(r.x,r.y),this.point(r.x+r.width,r.y),this.point(r.x+r.width,r.y+r.height),this.point(r.x,r.y+r.height)].map(p => new Phaser.Math.Vector2(p.x,p.y));
+    this.previewGraphics.fillStyle(error ? 0xcb644a : 0xf4d982, .6).fillPoints(pts,true).lineStyle(3,0xfff8e9).strokePoints(pts,true);
+    for (const c of FURNITURE.find(s=>s.id===this.preview!.id)!.access ? frontCells(this.preview) : []) { const p = this.point(c[0]+.5,c[1]+.5); this.previewGraphics.lineStyle(3,0xffffff).strokeEllipse(p.x,p.y,26,13); }
   }
   public resetView() { this.follow(); }
   public rotateView(delta: number) {
     if (!this.ground || this.modalOpen) return;
     this.turn = normalizeTurn(this.turn + delta);
-    this.redraw(); this.drawActor(0); this.follow();
+    this.redraw(); this.drawActor(0); this.follow(); if (this.preview) this.focusFloor();
     this.announce(`มุมมอง ${this.turn + 1}/4 · พิกัดพื้นที่และทางเดินเดิม`);
   }
   public setModal(open: boolean) { this.modalOpen = open; }
@@ -83,7 +129,7 @@ export class WorldScene extends Phaser.Scene {
   }
   private redraw() {
     this.drawGround();
-    this.decorations.forEach(object => object.destroy()); this.decorations = [];
+    this.decorations.forEach(object => object.destroy()); this.decorations = []; this.buildingShapes = [];
     for (const object of SCENE.staticObjects) {
       const corners = [this.point(object.x, object.y), this.point(object.x + object.width, object.y), this.point(object.x + object.width, object.y + object.height), this.point(object.x, object.y + object.height)];
       const centre = this.point(object.x + object.width / 2, object.y + object.height / 2);
@@ -91,6 +137,11 @@ export class WorldScene extends Phaser.Scene {
       const large = object.id.startsWith('BUILD'), tree = object.id.startsWith('ENV-003');
       const height = large ? 130 : tree ? 120 : 32;
       const shape = this.add.graphics().setDepth(baseY);
+      if (large) {
+        this.buildingShapes.push({ shape, centreX: centre.x, baseY, width: rightWidth(corners) });
+        const playerPoint = this.point(this.position.x,this.position.y);
+        shape.setAlpha(baseY > playerPoint.y && Math.abs(centre.x-playerPoint.x) < (rightWidth(corners)/2+35) && playerPoint.y > baseY-height-80 ? .35 : 1);
+      }
       this.decorations.push(shape);
       const sorted = [...corners].sort((a, b) => a.x - b.x);
       const left = sorted[0]!, right = sorted[3]!, front = [...corners].sort((a, b) => b.y - a.y)[0]!;
@@ -117,7 +168,22 @@ export class WorldScene extends Phaser.Scene {
       }
       for (const [x, y] of object.interactionCells) { const p = this.point(x! + 0.5, y! + 0.5); shape.fillStyle(0xf5da8a, 0.9).fillCircle(p.x, p.y, 7); }
     }
-    this.drawRoute();
+    if (this.measured) {
+      const floor=SCENE.projectFloor;
+      for (const [x,y,text] of [[floor.x+floor.width/2,floor.y+floor.height+0.5,'กว้าง 4 เมตร'],[floor.x+floor.width+0.5,floor.y+floor.height/2,'ยาว 6 เมตร']] as const) {
+        const p=this.point(x,y); const label=this.add.text(p.x,p.y,text,{fontFamily:'Noto Sans Thai',fontSize:`${18*this.textScale}px`,color:'#fff8e9',backgroundColor:'#304d43',padding:{x:8,y:5}}).setOrigin(.5).setDepth(10002); this.decorations.push(label);
+      }
+    }
+    for (const item of this.layout) {
+      const r = footprint(item), c = this.point(r.x+r.width/2,r.y+r.height/2), base = this.point(r.x+r.width,r.y+r.height);
+      const spec = FURNITURE.find(s => s.id === item.id)!;
+      const shape = this.add.graphics().setDepth(Math.max(...[this.point(r.x,r.y),this.point(r.x+r.width,r.y),base,this.point(r.x,r.y+r.height)].map(p=>p.y)));
+      this.decorations.push(shape);
+      const corners = [this.point(r.x,r.y),this.point(r.x+r.width,r.y),base,this.point(r.x,r.y+r.height)].map(p=>new Phaser.Math.Vector2(p.x,p.y-26));
+      shape.fillStyle(spec.color).fillPoints(corners,true).lineStyle(2,0x4b513e).strokePoints(corners,true);
+      const text = this.add.text(c.x,c.y-40,spec.label,{fontFamily:'Noto Sans Thai',fontSize:`${14*this.textScale}px`,color:'#fff8e9',backgroundColor:'#304d43'}).setOrigin(.5,1).setDepth(shape.depth+1); this.decorations.push(text);
+    }
+    this.drawRoute(); this.drawPreview();
   }
   private drawGround() {
     this.ground.clear();
@@ -137,9 +203,10 @@ export class WorldScene extends Phaser.Scene {
   }
   private walkTo(targets: readonly Cell[], onArrive?: () => void) {
     const inTransit = this.route.length && Math.hypot(this.position.x - this.cell[0] - 0.5, this.position.y - this.cell[1] - 0.5) > 0.001 ? this.route[0]! : null;
-    const path = findPath(inTransit ?? this.cell, targets);
+    const path = findPath(inTransit ?? this.cell, targets, this.layout.map(footprint));
     if (!path) { this.announce('จุดนี้เดินเข้าไม่ได้ ลองพื้นโล่ง หรือคลิกป้ายชื่อเพื่อเดินไปด้านใช้งาน'); return; }
-    this.route = inTransit ? [inTransit, ...path.slice(1)] : path.slice(1);
+    const align = Math.hypot(this.position.x-this.cell[0]-.5,this.position.y-this.cell[1]-.5)>0.001;
+    this.route = inTransit ? [inTransit, ...path.slice(1)] : align ? [this.cell,...path.slice(1)] : path.slice(1);
     this.target = path[path.length - 1]!; this.afterWalk = onArrive ?? null; this.drawRoute();
     if (!this.route.length) { const action = this.afterWalk; this.afterWalk = null; action?.(); }
   }
@@ -167,6 +234,8 @@ export class WorldScene extends Phaser.Scene {
         if (!this.route.length) { const action = this.afterWalk; this.afterWalk = null; action?.(); }
       } else { this.position.x += dx / distance * step; this.position.y += dy / distance * step; }
     }
+    const actorPoint = this.point(this.position.x,this.position.y);
+    for (const b of this.buildingShapes) b.shape.setAlpha(b.baseY > actorPoint.y && actorPoint.y > b.baseY - 210 && Math.abs(b.centreX-actorPoint.x)<b.width/2+35 ? .35 : 1);
     this.drawActor(!this.reduceMotion && this.route.length && !this.modalOpen ? Math.floor(time / 180) % 2 : 0);
   }
 }
