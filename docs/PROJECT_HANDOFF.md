@@ -9,6 +9,7 @@ This is the starting point for a new assistant/chat when the original conversati
 - At inspection before this documentation change, the public repository used `main` and contained only a 35-byte README (`# Learn-and-Play`, `Educational games`). The connection reported push permission.
 - Verified main at `335e06b` before this continuation: six tracked documentation files only, clean working tree. No game implementation.
 - Added design contracts, synthetic save example, recovery design, six-screen copy, draft rubric examples, and a small external art prompt/registry set. These remain documentation, not runtime features.
+- Continuation review at main `22b122c`: all 14 tracked files inspected; documentation only, clean before edits. [Review and staged next work](technical/CONTINUATION_REVIEW.md) records verified arithmetic, fixture limits, contract clarifications and scaffold acceptance. No runtime work added.
 - No game scaffold, `package.json`, package lock, Phaser scenes, game save system, production assets or deployment workflow has been added by this task.
 - User confirmed Node 22.19.0, npm 10.9.3, Git 2.55.0.windows.4, Node/npm under C:\\Program Files\\nodejs; clone succeeded after initial parent-directory Git errors. Keep Node 22.19.0 as starting baseline and recheck actual package engines. Assistant environment is separate.
 - A detailed Word report was delivered earlier, but the repository documents should carry the continuing project context. The Word report is not present in this repository unless subsequently added.
@@ -201,7 +202,8 @@ Acceptance: player chooses/revises a real goal; reasoning/instruction visible; n
 - Theme/map/palette/dimensions remain adjustable.
 - 9 Oct 2026: prototype rules 0.4 accepted, three difficulty axes accepted as 0.5. Documents added; advanced scenarios are designed, not implemented.
 - 9 Oct 2026 continuation: documentation contracts use integer cm²/basis points/whole coins; proposed import uses staged validation and backup before replace. No runtime validator or saving implemented. Rubric/mastery thresholds remain pending educator review.
-- Next concrete work: review the comprehensive design and external style sample; then scaffold when game implementation is explicitly requested. Read new detailed docs before activity changes.
+- 9 Oct 2026 review: comprehensive design and external sample prompts reviewed; A/B, C/D, COMPARE, SHAPE and synthetic balances checked arithmetically. Save envelope now lists plans/evidence; task snapshot and numeric-verdict scope clarified. No artwork or educator validation performed.
+- Next concrete work: user generates the small external style sample for review; when game implementation is explicitly requested, start the scaffold and staged slice in [continuation review](technical/CONTINUATION_REVIEW.md). Placeholder coding does not depend on final art. Read detailed docs before activity changes.
 - Need educator review and approach for free-text reasoning.
 - Need exact unlock thresholds, rubric examples and retention schedule. Difficulty should be skill-specific, user-selectable and evidence-based; never silently raise it.
 - Need handling of portfolio screenshots/storage/export.
