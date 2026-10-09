@@ -1,42 +1,14 @@
 # Learn-and-Play
 
-เกมการศึกษา Sandbox คณิตศาสตร์สำหรับนักเรียนมัธยม พร้อมการสอนตรง ๆ การประเมินจากหลักฐาน และพอร์ต
+เกมSandboxคณิตศาสตร์แนวดูแลหมู่บ้าน: รับคนเข้าชุมชน จัดสรรแปลง และช่วยออกแบบบ้าน/กิจการให้หมู่บ้านเติบโต ร้านซื้อของเข้าผ่านแผนที่ เปลี่ยนฉากเป็นNPCและฉากหลังร้าน
 
-**สถานะ: ต้นแบบเกมที่รันบนเครื่องได้ — โลกเต็มหน้าจอ HUD โครงการ กล้องติดตาม/หมุน สอนเล่น แผน/บทเรียน ร้าน และกติกาวัสดุ**
+**สถานะ: เริ่มออกแบบใหม่ — ล้างโค้ดและเอกสารต้นแบบเก่าตามคำสั่งผู้ใช้แล้ว ยังไม่มีเกมฉบับใหม่ให้รัน**
 
-เพิ่มจัดของพร้อมเงา/ตรวจทางเดิน เปรียบเทียบA/B สมุดช่วยค้น และแผนแรก–แผนแก้แล้ว ยังไม่มีประเมิน พอร์ตสมบูรณ์ รางวัล เซฟ หรือเว็บที่เผยแพร่ ข้อมูลหายเมื่อรีเฟรช
+- [คอนเซ็ปหลักและลำดับออกแบบต่อ](docs/GAME_CONCEPT.md)
+- [ส่งต่องานและสถานะจริง](docs/PROJECT_HANDOFF.md)
+- [Windowsหลังล้างต้นแบบ](docs/SETUP_WINDOWS.md)
+- [ภาพคอมมิชที่เก็บไว้](docs/ART_STATUS.md)
 
-**พัฒนาตามคำสั่งล่าสุดแล้ว:** [ผลตามแผน7จุด + E1/E2/E5 และเตรียมE6](docs/ui/ACCEPTED_GAME_UI_IMPLEMENTATION.md) · [ใบงานแก้ภาพพร้อมพร็อมป์](docs/art-audio/ART_REPAIR_WORK_ORDER.md) ภาพโลกยังเป็นplaceholderและข้อมูลหายเมื่อรีเฟรช
+ภาพต้นฉบับ33PNGยังอยู่ครบ การล้างไม่ลบประวัติGit งานก่อนล้างดูได้ที่ [275649a](https://github.com/166405241035-st-cyber/Learn-and-Play/tree/275649afb0d4e96fa802846e3dd88a5ac2b39631) และไม่ใช่ฐานออกแบบปัจจุบัน
 
-## เริ่มบน Windows
-
-เปิด Terminal ในโฟลเดอร์ที่มี `package.json` (Node 22.19.0 ที่ตรวจไว้รองรับ):
-
-```powershell
-git pull --ff-only origin main
-npm.cmd ci
-npm.cmd run dev
-```
-
-เปิด URL ที่ Terminal แสดง แล้วลองวางแผน → บทเรียน → ร้าน → ปู/รื้อ/คืนวัสดุ หยุดเซิร์ฟเวอร์ด้วย Ctrl+C
-
-ตรวจโค้ด: `npm.cmd test` และ `npm.cmd run build`
-
-[สถานะจริง แผนถัดไป และรายการที่ผู้ใช้ต้องทำ](docs/roadmap/FIRST_PROTOTYPE_PROGRESS.md)
-
-เริ่มอ่าน [PROJECT_HANDOFF](docs/PROJECT_HANDOFF.md), [AGENTS](AGENTS.md) และ [SETUP_WINDOWS](docs/SETUP_WINDOWS.md)
-
-- [ตัวเลือกเพิ่มเติม E1–E10 และแผนตรวจภาพคอมมิช](docs/ui/OPTIONAL_GAME_FEATURES_AND_ART_REVIEW.md)
-- [ปรับหน้าหลักเป็นเกมและผลกระทบการหมุนกล้อง](docs/ui/GAME_UI_REVISION.md)
-- [แบบหน้าจอครบวงจร](docs/ui/PROTOTYPE_SCREEN_DESIGN.md), [ผังและวัตถุ](docs/game-design/SCENE_OBJECT_SPEC.md), [แผนที่มุมบน](docs/game-design/SCENE_MAP.svg)
-- [รายการภาพ/เสียง](docs/art-audio/PROTOTYPE_PRODUCTION.md) และ [ตรวจแบบ/ผลกระทบการแก้](docs/roadmap/DESIGN_REVIEW_AND_CHANGE_IMPACT.md)
-- [ตัวชี้วัดชุดแรก](docs/curriculum/FIRST_UNIT_ALIGNMENT.md) และ [ช่องคำตอบ/การตรวจ](docs/curriculum/FIRST_UNIT_ASSESSMENT.md)
-- [แผนหลักสูตรคณิตศาสตร์](docs/curriculum/CURRICULUM_MAP.md), [ชุดการเรียนแรก](docs/curriculum/FIRST_LEARNING_UNIT.md) และ [การเชื่อมการเล่น](docs/curriculum/LEARNING_GAMEPLAY.md)
-- [ผลตรวจสถานะและงานพัฒนาถัดไป](docs/technical/CONTINUATION_REVIEW.md)
-- [แบบออกแบบครบวงจร](docs/game-design/COMPREHENSIVE_DESIGN.md)
-- [กติกาต้นแบบ](docs/game-design/PROTOTYPE_RULES.md) และ [ความยาก](docs/game-design/DIFFICULTY.md)
-- [สัญญาข้อมูล](docs/technical/DATA_CONTRACTS.md) และ [เซฟ/กู้คืน](docs/technical/SAVE_DESIGN.md)
-- [ข้อความหน้าจอ](docs/ui/SCREEN_COPY.md) และ [ตัวอย่างประเมิน](docs/assessment/RUBRIC_EXAMPLES.md)
-- [ทะเบียนภาพ](docs/art-audio/ASSET_REGISTRY.md) และ [พร็อมป์สร้างภายนอก](asset-prompts/style/STYLE_SAMPLE.md)
-
-ภาพสร้างภายนอกโดยผู้ใช้ วิชาอื่นเตรียมจุดต่อยอด ยังไม่ผลิตหลักสูตรในต้นแบบแรก
+รักษาการสอนตรง ๆ การประเมินจากหลักฐาน พอร์ต และการรองรับวิชาอื่นในอนาคต ขั้นต่อไปคือออกแบบที่ดิน/เงิน คำขอแรกและวงจรเล่นก่อนเริ่มเขียนโค้ดใหม่

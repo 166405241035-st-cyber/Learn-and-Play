@@ -1,31 +1,14 @@
-# Learn-and-Play — instructions for project assistants
+# Learn-and-Play — instructions after design reset
 
-## Start here
-1. Read `docs/PROJECT_HANDOFF.md` completely before designing or changing this project.
-2. Read `docs/SETUP_WINDOWS.md` for the development environment and hosting plan.
-3. Read `docs/game-design/PROTOTYPE_RULES.md` and `docs/game-design/DIFFICULTY.md` before activity/assessment changes.
-4. Inspect the actual repository, branch, working tree and current files. Repository state is authoritative for implemented features; the design document is not evidence that a feature exists.
-5. Preserve the distinction between agreed requirements, proposed details, implemented work, and unresolved decisions.
+## Read first
+Read docs/PROJECT_HANDOFF.md, docs/GAME_CONCEPT.md, docs/SETUP_WINDOWS.md and docs/ART_STATUS.md. Inspect the actual branch and files. The latest user instruction clears old prototype code/design documents and establishes a new concept; it does NOT authorize starting a new implementation yet.
 
-## Project requirements
-- Current subject: secondary-school mathematics. Prepare extension points for Thai, foreign languages, science and social studies without building those curricula now.
-- A living 2D sandbox: angled world, point-and-click movement/interactions, drag-and-place construction. Two-frame animation is the baseline, with continuous movement.
-- Teach explicitly: why a quantity is needed, relevant data/units, principle/formula, calculation/check, interpretation/decision.
-- Separate world success, assessed mastery, and portfolio evidence. Never infer mastery from money, play time, appearance, or a lucky random outcome.
-- Keep basic learning assistance accessible. Record hints/tools used in assessments. Pending review is not confirmed mastery.
-- User generates artwork externally. Maintain asset specifications and prompts in GitHub; do not bulk-generate artwork unless requested.
-- Latest instruction on 9 October 2026: user selected E1 + E2 + E5 and preparation of E6, and explicitly instructed implementation of the seven-point game redesign. Runtime implementation in this scope is now authorized; the earlier docs-only pause is historical. Read `docs/ui/ACCEPTED_GAME_UI_IMPLEMENTATION.md` for actual status. Write correction/missing-image prompts in project docs; external artwork production remains the user workflow. Do not add unselected E3/E4/E7–E10, hosting, accounts or paid services automatically.
+## Current direction
+Communicate in Thai. Player manages a village, considers newcomers' requests, allocates plots for NPC rental and helps design homes/businesses. Shops are accessed through a map and scene transition to NPC plus shop background. Village uses one fixed camera orientation; no camera rotation. Exact land/economy/curriculum/GUI rules remain to be designed.
 
-## Continuity
-- Update the handoff's current status, next actions and decision log after meaningful changes.
-- Link detailed documents from the handoff as they are added. Keep enough context for a new chat to continue without the old transcript.
-- Explain conflicts with prior requirements and propose a resolution; do not silently discard the user's goal.
-- Do not invent completed curriculum verification, installed dependencies, test results, deployment URLs or the user's local Node version.
-- Never commit credentials, personal player saves, `node_modules`, or generated build output. Review current repository rules before edits.
+Preserve math-first sandbox choices, explicit instruction, assessment/evidence distinct from world prosperity, portfolio and later subject extension. Do not infer mastery from money, appearance, time or random business outcomes. Do not silently import the old floor dimensions, budgets, asset counts, difficulty thresholds or runtime contracts.
 
-## Proposed technical direction
-Desktop-browser first; TypeScript + Phaser for the world, HTML/CSS for text-heavy learning/portfolio panels, Vite for development/build, npm for dependencies. The user's confirmed starting toolchain is Node 22.19.0 and npm 10.9.3; check package engines when scaffolding. Node 24 is optional, not required. The first scaffold pins Vite 8.3.4, TypeScript 5.9.3 and Phaser 3.90.0 with npm lockfile. Recheck engines before future upgrades.
-Local IndexedDB saves plus export/import first. No player login initially; online identity/sync is later work. Keep grading, reward rules, world logic and subject content separate.
+## Scope and continuity
+Only continue design until user explicitly asks to code the new prototype. Maintain implemented/accepted/proposed/pending distinctions and update handoff when decisions change. Original commissioned PNGs remain in asset-prompts/Illustrative image; do not delete, regenerate or bulk-produce them without instruction. New art prompts follow the new design, not obsolete camera variants.
 
-## Language
-Communicate with the user in Thai. Use readable English identifiers/filenames. Prefer concrete explanations and distinguish plans from verified behavior.
+No hosting, paid services, accounts, messaging others or new curricula automatically. Never commit credentials, player data, dependencies or generated build output. Keep useful toolchain observations separate from claims that a runnable new game exists. Old work is recoverable through Git history; do not restore it as the current design without user instruction.
