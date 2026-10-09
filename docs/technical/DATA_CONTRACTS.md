@@ -1,5 +1,5 @@
 # สัญญาข้อมูลต้นแบบ
-ฉบับออกแบบ 0.1 — 9 ตุลาคม 2026; ยังไม่มี TypeScript/runtime validator
+ฉบับออกแบบ 0.2 — 9 ตุลาคม 2026; ยังไม่มี TypeScript/runtime validator
 อ่านร่วมกับ [กติกา](../game-design/PROTOTYPE_RULES.md) และ [ความยาก](../game-design/DIFFICULTY.md)
 
 ## ขอบเขต
@@ -10,7 +10,7 @@
 | --- | --- | --- |
 | Subject | id, version, title, graderKind | math ก่อน; วิชาอื่นใช้ตัวตรวจเฉพาะ |
 | Objective | id, subjectId, version, prerequisites, source, reviewStatus | แหล่งหลักสูตรยังไม่ตรวจใช้ unverified |
-| TaskDefinition | id, version, subjectId, skillIds, context, parameters, toolsAllowed, assistanceOffered, complexityTags, openness, timePolicy, rubricVersion, availability | แยก planned/ready; เนื้อหาเก่าไม่เขียนทับ |
+| TaskDefinition | id, version, subjectId, skillIds, context, parameters, responseKind, graderKind, toolsAllowed, assistanceOffered, complexityTags, openness, timePolicy, rubricVersion, availability | แยก planned/ready; เนื้อหาเก่าไม่เขียนทับ |
 | Project | id, goal, status, resumeStatus, attemptIds, currentAttemptId | paused ต้องมี resumeStatus |
 | ProjectAttempt | id, projectId, taskSnapshot, budget, lots, floor, layout, planRevisionIds | รีเซ็ตสร้างใหม่ ไม่รีเซ็ตผลประเมิน |
 | PlanRevision | id, attemptId, createdAt, dataSelection, principle, calculation, check, choiceReason | เก็บแผนแรก/ใช้จริง; ข้อความไม่ใช่คะแนน |
@@ -55,3 +55,9 @@ shared portfolio/mastery อ่านหลักฐานและเงื่�
 
 ## ตรวจรับเมื่อเริ่มเขียนโค้ด
 ทั้ง A/B ผ่าน; คืนเกินถูกปฏิเสธ; คืนกล่องปิดหลังปูจนสำรองไม่พอต้องเปลี่ยนผลโลก; ถอนไม่สร้างกล่อง; ซื้อซ้ำ command เดิมไม่หักซ้ำ; เซฟล้มเหลวไม่ค้างครึ่งรายการ; เหตุผล pending ไม่ให้สิทธิ์; แก้ caption ไม่เปลี่ยนหลักฐาน; โหลดงานเก่ายังใช้ taskSnapshot เดิม
+
+## ข้อชี้แจงจากการทบทวน 9 ตุลาคม 2026
+Task snapshot ต้องเก็บ responseKind/graderKind ณ เริ่มงาน ไม่ใช้ตัวตรวจจาก subject รุ่นปัจจุบันแทนงานเก่า ตัวอย่างออกแบบเดิมยังไม่ครบสองช่องนี้และต้องปรับก่อนเป็น fixture ของ runtime
+DimensionResult.evidenceRefs ในตัวอย่างหมายถึง ID ของ assessment ต้นทาง ส่วน Evidence.assessmentAttemptId เชื่อมหลักฐานสรุปกลับไป assessment; อย่าตีความ evidenceRefs เป็น Evidence.id โดยอัตโนมัติ ระยะ runtime ควรเพิ่ม reference แบบระบุชนิดและช่องคำตอบที่ตรวจ
+verdict numeric-fields-correct ยืนยันเฉพาะช่องตัวเลข ไม่ยืนยันคำอธิบายการตรวจครบด้าน calculate-check; ด้านที่ยังไม่มีหลักฐานต้องระบุรอตรวจหรือขอข้อมูลเพิ่ม
+อ่าน [ผลทบทวนและงานถัดไป](CONTINUATION_REVIEW.md) ก่อนเปลี่ยนสัญญานี้เป็นโค้ด
