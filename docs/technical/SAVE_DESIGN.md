@@ -1,8 +1,8 @@
 # เซฟ ตัวอย่าง และการกู้คืน
-ฉบับออกแบบ 0.1 — ยังไม่มี IndexedDB หรือ export/import implementation
+ฉบับออกแบบ 0.2 — ยังไม่มี IndexedDB หรือ export/import implementation
 
 ## Envelope ที่เสนอ
-schemaVersion, contentVersion, exportedAt, projects, projectAttempts, assessments, portfolio, unlockGrants, settings, appliedCommands
+schemaVersion, contentVersion, exportedAt, projects, projectAttempts, plans, assessments, evidence, portfolio, unlockGrants, settings, appliedCommands
 ตัวอย่าง [SAVE_EXAMPLE.json](SAVE_EXAMPLE.json) เป็นข้อมูลสังเคราะห์เพื่อทบทวน ไม่ใช่เซฟผู้เล่นจริง และไม่ใช่ไฟล์ที่นำเข้าเกมได้ในตอนนี้
 ฐานแรกกำหนด schemaVersion `1-design`; เมื่อเขียน validator ต้องกำหนดเลขรุ่นจริงและ migration อย่างชัดเจน ไม่รับ `1-design` เข้าระบบจริงโดยเงียบ ๆ
 
@@ -28,3 +28,7 @@ coverRef เป็น asset ID ไม่รับ URL ภายนอก arbitra
 
 ## ชุดกรณีตรวจรับที่ต้องเขียนภายหลัง
 save/reload ทุกขั้นซื้อ/เปิด/ปู/คืน/รีเซ็ต; ปิดหน้าระหว่าง transaction; quota เต็ม; JSON ตัดขาด; ID ซ้ำหรืออ้างอิงหาย; เงิน/วัสดุติดลบ; คืนเกิน; task version หาย; schema ใหม่; migration ล้มเหลว; สำรองล้มเหลว; import ซ้ำไม่รับรางวัลซ้ำ; pending ไม่เปลี่ยนเป็น confirmed
+
+## ขอบเขต fixture และภาพ
+SAVE_EXAMPLE มี layout ว่างและค่าทางเดินที่สมมติ รวมทั้ง synthetic-cover-1 ที่ไม่มีภาพจริง ใช้ทบทวนจำนวน/การเชื่อมโยงเท่านั้น ก่อนสร้างเซฟจริงต้องออกแบบ photo manifest พร้อม MIME/ขนาด/ID และ blob package ให้ตรวจอ้างอิงได้; ไม่อนุญาตให้ placeholder ผ่านการตรวจภาพจริง
+worldComplete และ reachability เป็นค่า cache/ตัวอย่าง ต้องคำนวณใหม่จาก layout/กติกาฉบับเดิมเมื่อโหลด ไม่เชื่อค่าที่นำเข้า และไม่ replay ธุรกรรมเพื่อสร้างหลักฐานนั้น
