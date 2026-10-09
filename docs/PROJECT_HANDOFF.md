@@ -1,13 +1,14 @@
 # Learn-and-Play — project handoff and design baseline
 
-Updated: 9 October 2026 (Asia/Bangkok). Design baseline: 0.5. Repository: https://github.com/166405241035-st-cyber/Learn-and-Play
+Updated: 9 October 2026 (Asia/Bangkok). Design baseline: 0.6. Repository: https://github.com/166405241035-st-cyber/Learn-and-Play
 
 ## 1. Purpose of this file
 This is the starting point for a new assistant/chat when the original conversation is unavailable. Read this file, `AGENTS.md`, and the current repository before continuing. This document preserves the user's intent, constraints, proposals, work status and next steps. It is not a claim that the designed game already exists.
 
 ## 2. Current verified repository status
 - At inspection before this documentation change, the public repository used `main` and contained only a 35-byte README (`# Learn-and-Play`, `Educational games`). The connection reported push permission.
-- Documentation includes this handoff, Windows guidance, assistant instructions, accepted prototype rules and difficulty design. No game implementation yet.
+- Verified main at `335e06b` before this continuation: six tracked documentation files only, clean working tree. No game implementation.
+- Added design contracts, synthetic save example, recovery design, six-screen copy, draft rubric examples, and a small external art prompt/registry set. These remain documentation, not runtime features.
 - No game scaffold, `package.json`, package lock, Phaser scenes, game save system, production assets or deployment workflow has been added by this task.
 - User confirmed Node 22.19.0, npm 10.9.3, Git 2.55.0.windows.4, Node/npm under C:\\Program Files\\nodejs; clone succeeded after initial parent-directory Git errors. Keep Node 22.19.0 as starting baseline and recheck actual package engines. Assistant environment is separate.
 - A detailed Word report was delivered earlier, but the repository documents should carry the continuing project context. The Word report is not present in this repository unless subsequently added.
@@ -181,10 +182,12 @@ Save: project goals/drafts/layouts; money/inventory/purchases; activity state; a
 Prototype project statuses: draft, active, ready to summarize, portfolio stored, paused. Evidence statuses separate: none, assisted, submitted, checked, partially pending.
 
 ## 16. Next steps in order
+
+Comprehensive continuation: [end-to-end design 0.6](game-design/COMPREHENSIVE_DESIGN.md). Covers player journey, sandbox interactions, explicit lessons, assessment/pending review, portfolio, resources, art workflow, saves, extension and staged acceptance. All remain design.
 1. Environment checks and clone completed by user report; verify current terminal when scaffolding.
 2. Read accepted [prototype rules](game-design/PROTOTYPE_RULES.md) and [difficulty design](game-design/DIFFICULTY.md).
-3. Next: write activity/data contracts, save examples and detailed screen text; expand rubric examples and review correctness.
-4. Build asset registry and external-generation prompts; agree a style sample.
+3. Drafts now written: [data contracts](technical/DATA_CONTRACTS.md), [save/recovery design](technical/SAVE_DESIGN.md), [synthetic example](technical/SAVE_EXAMPLE.json), [screen copy](ui/SCREEN_COPY.md), [rubric examples](assessment/RUBRIC_EXAMPLES.md). Review correctness/educator criteria before treating results as mastery.
+4. Initial [asset registry](art-audio/ASSET_REGISTRY.md) and [external style sample prompts](../asset-prompts/style/STYLE_SAMPLE.md) prepared. User generates sample externally; review before expanding prompts/assets.
 5. When authorized, scaffold Vite/TypeScript/Phaser with placeholder art, pin versions/lockfile, add Node/version configuration and appropriate checks.
 6. Implement one end-to-end slice: explore → plan/lesson → shop → build → assess → portfolio → save/reload.
 7. Validate curriculum/assessment with educator and test users; revise before expanding mathematics.
@@ -197,7 +200,8 @@ Acceptance: player chooses/revises a real goal; reasoning/instruction visible; n
 - 9 Oct 2026: user confirmed Windows Node/npm/Git and successful clone. Exact package versions not selected.
 - Theme/map/palette/dimensions remain adjustable.
 - 9 Oct 2026: prototype rules 0.4 accepted, three difficulty axes accepted as 0.5. Documents added; advanced scenarios are designed, not implemented.
-- Read new detailed docs before activity changes.
+- 9 Oct 2026 continuation: documentation contracts use integer cm²/basis points/whole coins; proposed import uses staged validation and backup before replace. No runtime validator or saving implemented. Rubric/mastery thresholds remain pending educator review.
+- Next concrete work: review the comprehensive design and external style sample; then scaffold when game implementation is explicitly requested. Read new detailed docs before activity changes.
 - Need educator review and approach for free-text reasoning.
 - Need exact unlock thresholds, rubric examples and retention schedule. Difficulty should be skill-specific, user-selectable and evidence-based; never silently raise it.
 - Need handling of portfolio screenshots/storage/export.

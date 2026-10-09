@@ -1,0 +1,338 @@
+{
+  "schemaVersion": "1-design",
+  "contentVersion": "0.1-design",
+  "exportedAt": "2026-10-09T01:00:00Z",
+  "synthetic": true,
+  "projects": [
+    {
+      "id": "project-demo",
+      "goal": "reading-room",
+      "status": "portfolio_stored",
+      "resumeStatus": null,
+      "attemptIds": [
+        "project-attempt-1"
+      ],
+      "currentAttemptId": "project-attempt-1"
+    }
+  ],
+  "projectAttempts": [
+    {
+      "id": "project-attempt-1",
+      "projectId": "project-demo",
+      "taskSnapshot": {
+        "id": "SPACE-GUIDED-01",
+        "version": "0.1-design",
+        "subjectId": "math",
+        "skillIds": [
+          "math.area.rectangle",
+          "math.percent.allowance",
+          "math.purchase.whole-box"
+        ],
+        "context": "room-floor",
+        "parameters": {
+          "widthM": 4,
+          "lengthM": 6,
+          "allowanceBasisPoints": 1000,
+          "budgetCoins": 4000,
+          "materials": [
+            {
+              "id": "A",
+              "capacityCm2": 15000,
+              "priceCoins": 180
+            },
+            {
+              "id": "B",
+              "capacityCm2": 20000,
+              "priceCoins": 250
+            }
+          ]
+        },
+        "toolsAllowed": [
+          "calculator"
+        ],
+        "assistanceOffered": [
+          "prompt",
+          "principle",
+          "setup",
+          "worked-example"
+        ],
+        "complexityTags": [
+          "rectangle",
+          "whole-box"
+        ],
+        "openness": "bounded-goal",
+        "timePolicy": "untimed",
+        "rubricVersion": "0.1-draft",
+        "availability": "planned"
+      },
+      "budget": {
+        "initialCoins": 4000,
+        "remainingCoins": 760
+      },
+      "lots": [
+        {
+          "id": "lot-a",
+          "materialId": "A",
+          "capacityPerBox": 15000,
+          "unitPrice": 180,
+          "purchasedBoxes": 18,
+          "returnedBoxes": 0,
+          "sealedBoxes": 2,
+          "openedBoxes": 16
+        }
+      ],
+      "floor": {
+        "unit": "cm2",
+        "materialId": "A",
+        "actualArea": 240000,
+        "requiredReserve": 24000,
+        "balances": [
+          {
+            "materialId": "A",
+            "openedUnused": 0,
+            "placed": 240000
+          }
+        ]
+      },
+      "layout": {
+        "entranceReachable": true,
+        "requiredPointsReachable": true,
+        "objects": []
+      },
+      "planRevisionIds": [
+        "plan-1"
+      ],
+      "summary": "เลือก A เพราะเหลืองบ 760 เหรียญและสำรอง 3 ตร.ม.",
+      "photoRef": "synthetic-cover-1"
+    }
+  ],
+  "plans": [
+    {
+      "id": "plan-1",
+      "attemptId": "project-attempt-1",
+      "createdAt": "2026-10-09T00:30:00Z",
+      "dataSelection": "4×6 เมตร เผื่อ10% งบ4000",
+      "principle": "พื้นที่กว้าง×ยาว เผื่อจากพื้นที่ ซื้อกล่องเต็มปัดขึ้น",
+      "calculation": "24×1.1=26.4; ceil(26.4/1.5)=18; 18×180=3240",
+      "check": "18×1.5=27≥26.4; 4000−3240=760",
+      "choiceReason": "ต้องการเหลืองบมากกว่า B"
+    }
+  ],
+  "assessments": [
+    {
+      "id": "assessment-1",
+      "taskSnapshot": {
+        "id": "SPACE-INDEPENDENT-01",
+        "version": "0.1-design",
+        "subjectId": "math",
+        "skillIds": [
+          "math.area.rectangle",
+          "math.percent.allowance",
+          "math.purchase.whole-box"
+        ],
+        "context": "room-floor",
+        "parameters": {
+          "widthM": 3,
+          "lengthM": 5,
+          "allowanceBasisPoints": 1000,
+          "budgetCoins": 2100,
+          "materials": [
+            {
+              "id": "C",
+              "capacityCm2": 12000,
+              "priceCoins": 140
+            },
+            {
+              "id": "D",
+              "capacityCm2": 15000,
+              "priceCoins": 180
+            }
+          ]
+        },
+        "toolsAllowed": [
+          "calculator"
+        ],
+        "assistanceOffered": [
+          "prompt",
+          "principle",
+          "setup",
+          "worked-example"
+        ],
+        "complexityTags": [
+          "rectangle",
+          "whole-box"
+        ],
+        "openness": "bounded-goal",
+        "timePolicy": "untimed",
+        "rubricVersion": "0.1-draft",
+        "availability": "planned"
+      },
+      "reviewStatus": "partially_pending",
+      "helpUsed": [],
+      "toolsUsed": [
+        {
+          "kind": "calculator",
+          "step": "arithmetic",
+          "usedAt": "2026-10-09T00:50:00Z"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "submittedAt": "2026-10-09T00:55:00Z"
+        }
+      ],
+      "submittedWork": {
+        "areaCm2": 150000,
+        "requiredCoverageCm2": 165000,
+        "options": [
+          {
+            "materialId": "C",
+            "boxes": 14,
+            "costCoins": 1960
+          },
+          {
+            "materialId": "D",
+            "boxes": 11,
+            "costCoins": 1980
+          }
+        ],
+        "choice": "C",
+        "reason": "ทั้งคู่พอและไม่เกินงบ เลือก C เหลือ140มากกว่า D ที่เหลือ120"
+      },
+      "resultsByDimension": [
+        {
+          "dimensionId": "understand",
+          "status": "pending",
+          "verdict": null,
+          "evidenceRefs": [
+            "assessment-1"
+          ],
+          "reviewer": null,
+          "reviewedAt": null
+        },
+        {
+          "dimensionId": "model",
+          "status": "pending",
+          "verdict": null,
+          "evidenceRefs": [
+            "assessment-1"
+          ],
+          "reviewer": null,
+          "reviewedAt": null
+        },
+        {
+          "dimensionId": "calculate-check",
+          "status": "checked",
+          "verdict": "numeric-fields-correct",
+          "evidenceRefs": [
+            "assessment-1"
+          ],
+          "reviewer": "synthetic-numeric-check",
+          "reviewedAt": "2026-10-09T00:56:00Z"
+        },
+        {
+          "dimensionId": "interpret-decide",
+          "status": "pending",
+          "verdict": null,
+          "evidenceRefs": [
+            "assessment-1"
+          ],
+          "reviewer": null,
+          "reviewedAt": null
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "evidence-1",
+      "assessmentAttemptId": "assessment-1",
+      "subjectId": "math",
+      "skillId": "math.purchase.whole-box",
+      "claim": "applies-to-new-data",
+      "conditions": {
+        "helpUsed": [],
+        "toolsUsed": [
+          "calculator"
+        ],
+        "context": "same-room-new-data"
+      },
+      "confirmationStatus": "pending"
+    }
+  ],
+  "portfolio": [
+    {
+      "id": "portfolio-1",
+      "version": 1,
+      "projectSnapshot": {
+        "projectId": "project-demo",
+        "attemptId": "project-attempt-1",
+        "taskSnapshot": {
+          "id": "SPACE-GUIDED-01",
+          "version": "0.1-design",
+          "subjectId": "math",
+          "skillIds": [
+            "math.area.rectangle",
+            "math.percent.allowance",
+            "math.purchase.whole-box"
+          ],
+          "context": "room-floor",
+          "parameters": {
+            "widthM": 4,
+            "lengthM": 6,
+            "allowanceBasisPoints": 1000,
+            "budgetCoins": 4000,
+            "materials": [
+              {
+                "id": "A",
+                "capacityCm2": 15000,
+                "priceCoins": 180
+              },
+              {
+                "id": "B",
+                "capacityCm2": 20000,
+                "priceCoins": 250
+              }
+            ]
+          },
+          "toolsAllowed": [
+            "calculator"
+          ],
+          "assistanceOffered": [
+            "prompt",
+            "principle",
+            "setup",
+            "worked-example"
+          ],
+          "complexityTags": [
+            "rectangle",
+            "whole-box"
+          ],
+          "openness": "bounded-goal",
+          "timePolicy": "untimed",
+          "rubricVersion": "0.1-draft",
+          "availability": "planned"
+        },
+        "materialId": "A",
+        "netCostCoins": 3240,
+        "remainingCoins": 760,
+        "placedCm2": 240000,
+        "reserveCm2": 30000,
+        "worldComplete": true,
+        "summary": "เลือก A เหลืองบและสำรองพอ"
+      },
+      "assessmentRefs": [
+        "assessment-1"
+      ],
+      "editableCaption": "มุมอ่านหนังสือของฉัน",
+      "reflection": "ต้องปัดกล่องขึ้นเพื่อให้วัสดุพอ",
+      "coverRef": "synthetic-cover-1"
+    }
+  ],
+  "unlockGrants": [],
+  "settings": {
+    "reduceMotion": true
+  },
+  "appliedCommands": []
+}

@@ -1,24 +1,15 @@
 # Learn-and-Play
 
-Educational games — เกม Sandbox 2D เพื่อเรียนรู้คณิตศาสตร์สำหรับนักเรียนมัธยม
+เกมการศึกษา Sandbox คณิตศาสตร์สำหรับนักเรียนมัธยม พร้อมการสอนตรง ๆ การประเมินจากหลักฐาน และพอร์ต
 
-## เริ่มอ่านที่นี่
-- [สรุปโครงการและเอกสารส่งต่องาน](docs/PROJECT_HANDOFF.md): เป้าหมาย แนวคิด แบบเกม หลักสูตร การประเมิน พอร์ต ภาพ เสียง ระบบเซฟ ข้อตกลง และงานค้าง
-- [ตั้งค่า Windows / VS Code / Node.js และแผนเผยแพร่เว็บ](docs/SETUP_WINDOWS.md)
-- [กติกากิจกรรมต้นแบบ](docs/game-design/PROTOTYPE_RULES.md)
-- [ระบบความยากสามแกน](docs/game-design/DIFFICULTY.md)
-- [แนวทางสำหรับผู้ช่วยในแชทใหม่](AGENTS.md)
+**สถานะ: เอกสารออกแบบ ยังไม่มีเกมที่รันได้**
 
-## สถานะ
-อยู่ในขั้นออกแบบและเตรียมเครื่องมือ ยังไม่มีเกมที่รันได้ ไม่มี package.json และยังไม่เผยแพร่เว็บ
+เริ่มอ่าน [PROJECT_HANDOFF](docs/PROJECT_HANDOFF.md), [AGENTS](AGENTS.md) และ [SETUP_WINDOWS](docs/SETUP_WINDOWS.md)
 
-แนวทางพัฒนา: TypeScript + Phaser + Vite, desktop browser first. รุ่นแรกเสนอเซฟในเครื่องและสำรองไฟล์โดยไม่ต้องล็อกอินผู้เล่น
+- [แบบออกแบบครบวงจร](docs/game-design/COMPREHENSIVE_DESIGN.md)
+- [กติกาต้นแบบ](docs/game-design/PROTOTYPE_RULES.md) และ [ความยาก](docs/game-design/DIFFICULTY.md)
+- [สัญญาข้อมูล](docs/technical/DATA_CONTRACTS.md) และ [เซฟ/กู้คืน](docs/technical/SAVE_DESIGN.md)
+- [ข้อความหน้าจอ](docs/ui/SCREEN_COPY.md) และ [ตัวอย่างประเมิน](docs/assessment/RUBRIC_EXAMPLES.md)
+- [ทะเบียนภาพ](docs/art-audio/ASSET_REGISTRY.md) และ [พร็อมป์สร้างภายนอก](asset-prompts/style/STYLE_SAMPLE.md)
 
-คณิตศาสตร์เป็นวิชาปัจจุบัน เตรียมโครงสร้างรองรับภาษาไทย ภาษาต่างประเทศ วิทยาศาสตร์ และสังคมศึกษาในอนาคต
-
-## เริ่มแชทใหม่
-ส่งลิงก์ repository นี้และข้อความ:
-
-> ช่วยทำ Learn-and-Play ต่อ อ่าน AGENTS.md, docs/PROJECT_HANDOFF.md และ docs/SETUP_WINDOWS.md ก่อน ตรวจไฟล์ปัจจุบัน แยกสิ่งที่ทำแล้วจากแผน แล้วทำงานถัดไปตามเอกสาร โดยรักษาเป้าหมาย Sandbox คณิตศาสตร์ การสอนตรง ๆ การประเมินและพอร์ต ภาพจะสร้างจากภายนอกตามพร็อมป์ในโครงการ
-
-เอกสารไม่ได้ทำให้ผู้ช่วยจำข้ามแชทเอง ต้องให้แชทใหม่เข้าถึงและอ่าน repository นี้
+ภาพสร้างภายนอกโดยผู้ใช้ วิชาอื่นเตรียมจุดต่อยอด ยังไม่ผลิตหลักสูตรในต้นแบบแรก
