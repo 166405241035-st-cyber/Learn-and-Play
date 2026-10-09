@@ -6,11 +6,14 @@ Updated: 9 October 2026 (Asia/Bangkok). Design baseline: 0.6 plus curriculum and
 This is the starting point for a new assistant/chat when the original conversation is unavailable. Read this file, `AGENTS.md`, and the current repository before continuing. This document preserves the user's intent, constraints, proposals, work status and next steps. It is not a claim that the designed game already exists.
 
 ## 2. Current verified repository status
+
+**Latest implementation continuation (9 Oct):** user reviewed design and instructed planning plus execution of the next step. Prototype coding is authorized. Added pinned Vite/TypeScript/Phaser scaffold, transactional in-memory project logic, BFS/click movement and placeholder angled world, guided plan/8 lessons/cart/shop/floor/refund/reset UI. See [first prototype status and next plan](roadmap/FIRST_PROTOTYPE_PROGRESS.md). No furniture placement, assessment, portfolio, reward, durable save, final art/audio or hosting yet. The historical entries below describe earlier inspections.
+
 - At inspection before this documentation change, the public repository used `main` and contained only a 35-byte README (`# Learn-and-Play`, `Educational games`). The connection reported push permission.
 - Verified main at `335e06b` before this continuation: six tracked documentation files only, clean working tree. No game implementation.
 - Added design contracts, synthetic save example, recovery design, six-screen copy, draft rubric examples, and a small external art prompt/registry set. These remain documentation, not runtime features.
 - Continuation review at main `22b122c`: all 14 tracked files inspected; documentation only, clean before edits. [Review and staged next work](technical/CONTINUATION_REVIEW.md) records verified arithmetic, fixture limits, contract clarifications and scaffold acceptance. No runtime work added.
-- No game scaffold, `package.json`, package lock, Phaser scenes, game save system, production assets or deployment workflow has been added by this task.
+- Before the first implementation continuation there was no scaffold. The new scaffold now includes package/lock and a Phaser scene; game save, production assets and deployment remain absent.
 - User confirmed Node 22.19.0, npm 10.9.3, Git 2.55.0.windows.4, Node/npm under C:\\Program Files\\nodejs; clone succeeded after initial parent-directory Git errors. Keep Node 22.19.0 as starting baseline and recheck actual package engines. Assistant environment is separate.
 - A detailed Word report was delivered earlier, but the repository documents should carry the continuing project context. The Word report is not present in this repository unless subsequently added.
 
@@ -28,14 +31,14 @@ Future subjects include Thai, foreign languages, science and social studies. Pre
 | --- | --- |
 | Agreed direction | Mathematics first; sandbox freedom; explicit teaching; systematic reasoning; meaningful assessment; portfolio; future subject support |
 | Accepted development direction | Browser game, Phaser + TypeScript, VS Code, separate GitHub repository |
-| Starting toolchain | Vite + npm proposed; user Node 22.19.0/npm 10.9.3 confirmed; dependency versions not locked |
+| Current scaffold | Vite 8.3.4 / TypeScript 5.9.3 / Phaser 3.90.0 with npm lock; user Node 22.19.0/npm 10.9.3 baseline |
 | Agreed visual direction | Living 2D angled world; point-and-click and drag placement; two-frame animation baseline |
 | Proposed specifics | Warm community theme, starting map, NPC roles, palette, dimensions, particular rewards and time cycle |
 | Proposed save baseline | No login; IndexedDB with save export/import; online accounts later |
 | User production preference | Generate artwork externally; write specifications/prompts in GitHub before producing many assets |
-| Not implemented | All game systems, final art/audio, online hosting and full curriculum |
+| Not implemented | Furniture placement, assessment/portfolio/rewards, durable save, final art/audio, hosting and full curriculum |
 
-The user expects the assistant to design proactively, accept corrections, and point out conflicts with earlier goals. The current task authorizes documentation/setup guidance, not immediate full game development.
+The user expects the assistant to design proactively, accept corrections, and point out conflicts with earlier goals. The initial task authorized documentation/setup. After reviewing design, the user authorized the next prototype implementation step; continue staged development within that scope.
 
 ## 5. Game identity and loop
 Proposed identity: an inviting community that develops through the player's projects. The player is a new member with a personal plot. Possible interests: building/decorating, selling, planning, investigating data. Interests are not permanent class selections.
@@ -188,6 +191,9 @@ Prototype project statuses: draft, active, ready to summarize, portfolio stored,
 
 ## 16. Next steps in order
 
+**Current next action:** follow [FIRST_PROTOTYPE_PROGRESS](roadmap/FIRST_PROTOTYPE_PROGRESS.md): complete S3 furniture placement/access validation, then S4 assessment/portfolio and S5 persistence. Earlier design-only milestones below are retained as context, not current implementation status.
+
+
 Comprehensive continuation: [end-to-end design 0.6](game-design/COMPREHENSIVE_DESIGN.md). Covers player journey, sandbox interactions, explicit lessons, assessment/pending review, portfolio, resources, art workflow, saves, extension and staged acceptance. All remain design.
 1. User identified curriculum detail/gameplay connection as insufficient and accepted prioritizing curriculum before continuing screen design. Start from the new curriculum documents; first-unit partial indicator mapping and response specification are now written; next work is detailed plan/assessment UI from the specified fields, while educator lesson/rubric review remains pending. Environment checks and clone completed by user report; verify current terminal when scaffolding.
 2. Read accepted [prototype rules](game-design/PROTOTYPE_RULES.md) and [difficulty design](game-design/DIFFICULTY.md).
@@ -211,12 +217,14 @@ Acceptance: player chooses/revises a real goal; reasoning/instruction visible; n
 - 9 Oct 2026 next continuation: full IPST guide excerpts checked for primary prerequisites and M1 links; [first-unit alignment](curriculum/FIRST_UNIT_ALIGNMENT.md) records partial coverage and process support, and [response/grading specification](curriculum/FIRST_UNIT_ASSESSMENT.md) adds unit/decimal/whole-box checkpoints and structured C/D fields. Decimal-divisor instruction clarified; numeric checks stay separate from pending reasoning. No educator approval or runtime result claimed.
 - 9 Oct 2026 expanded design: user requested completing as much of ordered items 1–8 as possible, with change-impact reporting. Items 1–6 now detailed: [screens](ui/PROTOTYPE_SCREEN_DESIGN.md), [scene/object](game-design/SCENE_OBJECT_SPEC.md), [production](art-audio/PROTOTYPE_PRODUCTION.md), [external prompts](../asset-prompts/prototype/PROTOTYPE_PROMPTS.md), [cases/roadmap/change impact](roadmap/DESIGN_REVIEW_AND_CHANGE_IMPACT.md). Added precise SVG/JSON scene design. Static map reachability/arithmetic/links checked in scratch; no runtime/pilot claimed.
 - Proposed detail decisions: whole-floor place/remove initially; four logical furniture directions; prior help/exposure tracked across panels; numeric field checks separate from reasoning; one first-world-decoration grant per local profile; knowledge grants disabled pending reviewed criteria. External artwork remains ungenerated.
-- Next concrete work: user review/corrections using impact matrix, educator review of first-unit content, external five-image style sample. When explicitly instructed to code, start S0/S1 through S6 from roadmap. No game implementation begun in this design round. Broader curriculum mapping remains pending. External art sample may proceed independently. When implementation is explicitly requested, follow the staged slice in CONTINUATION_REVIEW; placeholder coding does not depend on final art.
+- Earlier next work before implementation: user review/corrections using impact matrix, educator review of first-unit content, external five-image style sample. When explicitly instructed to code, start S0/S1 through S6 from roadmap. No game implementation begun in this design round. Broader curriculum mapping remains pending. External art sample may proceed independently. When implementation is explicitly requested, follow the staged slice in CONTINUATION_REVIEW; placeholder coding does not depend on final art.
 - Need educator review and approach for free-text reasoning.
 - Need exact unlock thresholds, rubric examples and retention schedule. Difficulty should be skill-specific, user-selectable and evidence-based; never silently raise it.
 - Need handling of portfolio screenshots/storage/export.
 - Need preferred art service/reference and asset rights records.
 - Need hosting selection; GitHub Pages is a suitable proposed static prototype route, not yet enabled or deployed.
+
+- 9 Oct 2026 implementation: user confirmed design review and requested the next plan and execution. Added first scaffold and S1/S2 plus partial S3. No hosting/accounts/paid services added. Current runtime and remaining work are listed separately in FIRST_PROTOTYPE_PROGRESS.md.
 
 ## 18. Message to start a new chat
 > Continue Learn-and-Play: https://github.com/166405241035-st-cyber/Learn-and-Play . Read AGENTS.md, docs/PROJECT_HANDOFF.md and docs/SETUP_WINDOWS.md, then inspect the current files/branch. Summarize implemented versus planned work and continue the recorded next task. Preserve math-first sandbox, explicit teaching, evidence-based portfolio and external asset generation. Do not assume the old chat or claimed implementations exist.

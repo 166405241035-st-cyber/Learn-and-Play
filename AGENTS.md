@@ -14,7 +14,7 @@
 - Separate world success, assessed mastery, and portfolio evidence. Never infer mastery from money, play time, appearance, or a lucky random outcome.
 - Keep basic learning assistance accessible. Record hints/tools used in assessments. Pending review is not confirmed mastery.
 - User generates artwork externally. Maintain asset specifications and prompts in GitHub; do not bulk-generate artwork unless requested.
-- Current authorized work is project documentation and setup guidance. Do not silently expand this into game implementation, hosting, online accounts or paid services.
+- On 9 October 2026, after reviewing the design, the user instructed the assistant to plan and execute the next development step. Prototype implementation with placeholder art is now authorized. Hosting, online accounts and paid services remain outside this scope.
 
 ## Continuity
 - Update the handoff's current status, next actions and decision log after meaningful changes.
@@ -24,7 +24,7 @@
 - Never commit credentials, personal player saves, `node_modules`, or generated build output. Review current repository rules before edits.
 
 ## Proposed technical direction
-Desktop-browser first; TypeScript + Phaser for the world, HTML/CSS for text-heavy learning/portfolio panels, Vite for development/build, npm for dependencies. The user's confirmed starting toolchain is Node 22.19.0 and npm 10.9.3; check package engines when scaffolding. Node 24 is optional, not required. Exact dependency versions and a lockfile are to be selected when scaffolding is authorized.
+Desktop-browser first; TypeScript + Phaser for the world, HTML/CSS for text-heavy learning/portfolio panels, Vite for development/build, npm for dependencies. The user's confirmed starting toolchain is Node 22.19.0 and npm 10.9.3; check package engines when scaffolding. Node 24 is optional, not required. The first scaffold pins Vite 8.3.4, TypeScript 5.9.3 and Phaser 3.90.0 with npm lockfile. Recheck engines before future upgrades.
 Local IndexedDB saves plus export/import first. No player login initially; online identity/sync is later work. Keep grading, reward rules, world logic and subject content separate.
 
 ## Language

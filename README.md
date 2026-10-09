@@ -2,7 +2,25 @@
 
 เกมการศึกษา Sandbox คณิตศาสตร์สำหรับนักเรียนมัธยม พร้อมการสอนตรง ๆ การประเมินจากหลักฐาน และพอร์ต
 
-**สถานะ: เอกสารออกแบบ ยังไม่มีเกมที่รันได้**
+**สถานะ: ต้นแบบแรกที่รันบนเครื่องได้ — ฉากภาพชั่วคราว แผน/บทเรียน ร้าน และกติกาวัสดุ**
+
+ยังไม่มีจัดเฟอร์นิเจอร์ ประเมิน พอร์ต รางวัล เซฟ หรือเว็บที่เผยแพร่ ข้อมูลหายเมื่อรีเฟรช
+
+## เริ่มบน Windows
+
+เปิด Terminal ในโฟลเดอร์ที่มี `package.json` (Node 22.19.0 ที่ตรวจไว้รองรับ):
+
+```powershell
+git pull --ff-only origin main
+npm.cmd ci
+npm.cmd run dev
+```
+
+เปิด URL ที่ Terminal แสดง แล้วลองวางแผน → บทเรียน → ร้าน → ปู/รื้อ/คืนวัสดุ หยุดเซิร์ฟเวอร์ด้วย Ctrl+C
+
+ตรวจโค้ด: `npm.cmd test` และ `npm.cmd run build`
+
+[สถานะจริง แผนถัดไป และรายการที่ผู้ใช้ต้องทำ](docs/roadmap/FIRST_PROTOTYPE_PROGRESS.md)
 
 เริ่มอ่าน [PROJECT_HANDOFF](docs/PROJECT_HANDOFF.md), [AGENTS](AGENTS.md) และ [SETUP_WINDOWS](docs/SETUP_WINDOWS.md)
 

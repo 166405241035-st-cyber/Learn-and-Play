@@ -1,5 +1,7 @@
 # ตรวจสถานะและเตรียมพัฒนาต้นแบบ
 
+> Latest: the user subsequently authorized prototype implementation. See [FIRST_PROTOTYPE_PROGRESS](../roadmap/FIRST_PROTOTYPE_PROGRESS.md) for current runnable features and verification; this review records the earlier documentation-only baseline.
+
 9 ตุลาคม 2026 (Asia/Bangkok) — ทบทวน repository `main` ที่ `22b122c`
 สถานะ: ตรวจเอกสารและข้อมูลสังเคราะห์ ยังไม่ได้เขียนเกมหรือตรวจโดยครู
 

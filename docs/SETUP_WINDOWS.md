@@ -1,6 +1,6 @@
 # Windows / VS Code setup and web publishing plan
 
-Updated 9 October 2026. Status: documentation only; this repository does not yet contain a runnable game or package.json.
+Updated 9 October 2026. Status: first local runnable prototype now includes package.json and lockfile. See FIRST_PROTOTYPE_PROGRESS.md for implemented versus remaining features.
 
 ## 1. Common proposed toolchain
 | Tool | Direction |
@@ -39,7 +39,7 @@ Interpretation:
 - Multiple node paths: identify the active install before updating; do not remove paths blindly.
 - npm errors other than a PowerShell script-policy issue: retain the actual message for diagnosis.
 
-User-reported Windows checks: Node 22.19.0, npm 10.9.3, Git 2.55.0.windows.4, Node/npm in C:\\Program Files\\nodejs. The user subsequently confirmed successful cloning after the parent directory was not a Git repository. The clone instructions used C:\\projactLearn-and-Play\\Learn-and-Play; exact final local path was not independently measured. The assistant's Node v24.19.0/npm 11.9.0 is a separate environment. Since the repository has no package.json yet, no existing dependency compatibility/build has been verified.
+User-reported Windows checks: Node 22.19.0, npm 10.9.3, Git 2.55.0.windows.4, Node/npm in C:\\Program Files\\nodejs. The user subsequently confirmed successful cloning after the parent directory was not a Git repository. The clone instructions used C:\\projactLearn-and-Play\\Learn-and-Play; exact final local path was not independently measured. The assistant's Node v24.19.0/npm 11.9.0 is a separate environment. The first scaffold now pins Vite 8.3.4, TypeScript 5.9.3 and Phaser 3.90.0. Assistant checks run separately from the user’s Windows machine; Windows installation/play must still be checked by the user.
 
 ## 3. Install if needed
 1. Download Windows Node 24 LTS installer from https://nodejs.org/en/download . Select the architecture matching your computer, typically x64; keep npm/PATH options.
@@ -80,19 +80,20 @@ git pull --ff-only origin main
 
 Public cloning does not require a player login. Pushing source may require GitHub developer sign-in via a supported credential helper; never put credentials into the project.
 
-## 5. Not runnable yet — commands for the later scaffold
-Do not run `npm install` or `npm run dev` expecting a game until package.json exists. Do not run create-vite directly into this non-empty repository and accept file deletion prompts: it can conflict with README/docs.
+## 5. Run the first local prototype
+After pulling the prototype commit, verify package.json exists in your current folder. Use the committed lockfile with npm.cmd ci. Do not run create-vite into this repository; the scaffold is already created.
 
-When scaffold creation is requested, the assistant should prepare the template separately, merge the needed files without overwriting docs, add Phaser, pin compatible versions, and commit package.json/package-lock.json. Proposed scripts:
+The scaffold was added without overwriting design documents. Versions: Vite 8.3.4, TypeScript 5.9.3, Phaser 3.90.0. Available scripts:
 
 | Script | Purpose |
 | --- | --- |
 | npm run dev | Start local development server |
-| npm run typecheck | Validate TypeScript; only when this script is added |
+| npm run typecheck | Validate TypeScript |
 | npm run build | Type-check/build according to committed scripts |
 | npm run preview | Inspect built output locally; not a production hosting service |
+| npm test | Compile pure domain code and run Node tests |
 
-After a lockfile is committed:
+Run from the cloned project folder, after updating safely:
 
 ```powershell
 npm.cmd ci
@@ -101,7 +102,9 @@ npm.cmd run dev
 
 Open the URL printed by the terminal (often http://localhost:5173). Stop with Ctrl+C. On updates, pull safely and rerun npm ci if dependencies changed. Use the dev server rather than double-clicking index.html. Local play saves may be separate from deployed URL saves because browser storage is origin-specific.
 
-Proposed project configuration to add during scaffold: Node version hint (.nvmrc or .node-version), engines in package.json, ignore node_modules/dist/local secrets, npm lockfile, formatting/editor rules, and checks. No such files are claimed to exist now.
+Added .nvmrc (22.19.0), package engines, .gitignore for node_modules/dist/local secrets/test output, npm lockfile, .editorconfig and typecheck/build/test scripts. Current Vite base is relative for local/static preview; hosting config and workflows remain later scope.
+
+Current prototype keeps state in memory only. Reloading loses project data; the UI warns before leaving a changed session. No save/export/import commands are available yet.
 
 ## 6. GitHub settings for a future web build
 Current repo is public/main. No need to enable Pages just to write docs or run locally.
@@ -126,7 +129,7 @@ Proposed prototype: no login, IndexedDB, explicit save status, backup export/imp
 - [x] User confirmed cloning succeeded; verify current terminal path before running commands.
 - [ ] Confirm no local edits are lost during updates.
 - [ ] Keep original external artwork with IDs and usage terms.
-- [ ] Agree prototype rules before coding.
+- [x] User reviewed the prototype design and instructed the next implementation step.
 - [ ] Later, run committed setup/build commands and report exact errors.
 
 ## 9. Official references
