@@ -1,6 +1,6 @@
 # Learn-and-Play — project handoff and design baseline
 
-Updated: 9 October 2026 (Asia/Bangkok). Design baseline: 0.6. Repository: https://github.com/166405241035-st-cyber/Learn-and-Play
+Updated: 9 October 2026 (Asia/Bangkok). Design baseline: 0.6 plus curriculum draft 0.1. Repository: https://github.com/166405241035-st-cyber/Learn-and-Play
 
 ## 1. Purpose of this file
 This is the starting point for a new assistant/chat when the original conversation is unavailable. Read this file, `AGENTS.md`, and the current repository before continuing. This document preserves the user's intent, constraints, proposals, work status and next steps. It is not a claim that the designed game already exists.
@@ -75,9 +75,11 @@ Paths may overlap square areas. Main paths are two cells wide. Interaction point
 Interaction references: planning desk (9,15); storage (9,19); project sign (4,14); shop A (23,14); shop B (27,14); work board (13,10); learning point (7,7); portfolio board (23,6); bench (18,14); personal entrance (11,13).
 
 ## 8. Curriculum plan and coverage status
+
+Continuation: [curriculum map](curriculum/CURRICULUM_MAP.md), [first learning unit](curriculum/FIRST_LEARNING_UNIT.md), [learning/gameplay connection](curriculum/LEARNING_GAMEPLAY.md). On 9 October, 15 official Project14 book indexes were read and their 59 chapter occurrences counted including duplicates. This verifies the index list only; full indicator/outcome mapping, prerequisite sources, depth, lesson review and educator validation are still pending. First unit now specifies 8 objectives, original practice examples, assistance, plan fields, assessment examples and portfolio evidence. All remain design, with no game implementation.
 Initial mapping covers units/conversion, fractions/decimals, ratios/proportion/scale, percentages, area/volume, equations, simultaneous equations, functions/graphs, statistics and probability. This is a starter activity map, not the complete secondary curriculum.
 
-Earlier planning described 15 IPST book indexes and 59 chapter occurrences, with overlap between basic/advanced books. Their detailed evidence and subtopic mapping are not stored here; verify and document before treating those counts as a curriculum audit.
+The detailed index links and chapter list are now stored in CURRICULUM_MAP.md. Do not treat the 59 chapter occurrences as unique objectives or a completed curriculum audit. No official indicator codes are claimed in the first unit; they remain null until mapped to primary documents.
 
 Planned groups: prerequisite foundations; M1–M3; upper-secondary basic; upper-secondary additional; real applications; entrance preparation. Each objective needs stable ID, source/version, prerequisites, depth, lesson, practice, activity, assessment, grading guidance and review status. Use a coverage matrix to find omissions; chapter names alone are insufficient.
 
@@ -185,7 +187,7 @@ Prototype project statuses: draft, active, ready to summarize, portfolio stored,
 ## 16. Next steps in order
 
 Comprehensive continuation: [end-to-end design 0.6](game-design/COMPREHENSIVE_DESIGN.md). Covers player journey, sandbox interactions, explicit lessons, assessment/pending review, portfolio, resources, art workflow, saves, extension and staged acceptance. All remain design.
-1. Environment checks and clone completed by user report; verify current terminal when scaffolding.
+1. User identified curriculum detail/gameplay connection as insufficient and accepted prioritizing curriculum before continuing screen design. Start from the new curriculum documents; next review is official indicator mapping and first-unit lesson/rubric review, then detailed plan/assessment UI. Environment checks and clone completed by user report; verify current terminal when scaffolding.
 2. Read accepted [prototype rules](game-design/PROTOTYPE_RULES.md) and [difficulty design](game-design/DIFFICULTY.md).
 3. Drafts now written: [data contracts](technical/DATA_CONTRACTS.md), [save/recovery design](technical/SAVE_DESIGN.md), [synthetic example](technical/SAVE_EXAMPLE.json), [screen copy](ui/SCREEN_COPY.md), [rubric examples](assessment/RUBRIC_EXAMPLES.md). Review correctness/educator criteria before treating results as mastery.
 4. Initial [asset registry](art-audio/ASSET_REGISTRY.md) and [external style sample prompts](../asset-prompts/style/STYLE_SAMPLE.md) prepared. User generates sample externally; review before expanding prompts/assets.
@@ -203,7 +205,8 @@ Acceptance: player chooses/revises a real goal; reasoning/instruction visible; n
 - 9 Oct 2026: prototype rules 0.4 accepted, three difficulty axes accepted as 0.5. Documents added; advanced scenarios are designed, not implemented.
 - 9 Oct 2026 continuation: documentation contracts use integer cm²/basis points/whole coins; proposed import uses staged validation and backup before replace. No runtime validator or saving implemented. Rubric/mastery thresholds remain pending educator review.
 - 9 Oct 2026 review: comprehensive design and external sample prompts reviewed; A/B, C/D, COMPARE, SHAPE and synthetic balances checked arithmetically. Save envelope now lists plans/evidence; task snapshot and numeric-verdict scope clarified. No artwork or educator validation performed.
-- Next concrete work: user generates the small external style sample for review; when game implementation is explicitly requested, start the scaffold and staged slice in [continuation review](technical/CONTINUATION_REVIEW.md). Placeholder coding does not depend on final art. Read detailed docs before activity changes.
+- 9 Oct 2026 curriculum steering: user requested more detailed mathematical curriculum and a clear connection to actual play. Added source-index map, detailed 8-objective first unit, lesson/practice/assessment/portfolio links and untimed session/difficulty design. Screens/scaffold remain later work. Free-text review, indicator mapping, mastery thresholds and time estimates still need validation.
+- Next concrete work: map primary curriculum indicators and review first-unit learning content, then design plan/assessment screens from those objectives. External art sample may proceed independently. When implementation is explicitly requested, follow the staged slice in CONTINUATION_REVIEW; placeholder coding does not depend on final art.
 - Need educator review and approach for free-text reasoning.
 - Need exact unlock thresholds, rubric examples and retention schedule. Difficulty should be skill-specific, user-selectable and evidence-based; never silently raise it.
 - Need handling of portfolio screenshots/storage/export.
