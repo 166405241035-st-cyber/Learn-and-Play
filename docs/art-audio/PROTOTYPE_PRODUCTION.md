@@ -1,5 +1,8 @@
 # รายการภาพและเสียงขั้นต่ำพร้อมข้อกำหนด
 
+> ล่าสุด: กล้องติดตามและหมุน 4 มุมเพิ่มแล้วใน placeholder runtime. จำนวน 83 ภาพในเอกสารฐานยังไม่รวม variants อาคาร/วัตถุ/cloth ตามกล้อง; เสนอ 119 ภายใต้เงื่อนไขใน [GAME_UI_REVISION](../ui/GAME_UI_REVISION.md). อ่าน [พร็อมป์กล้อง](../../asset-prompts/prototype/CAMERA_VIEW_PROMPTS.md) ก่อนผลิตเพิ่ม ยังไม่มี PNG จริงที่อนุมัติ/ผูก runtime.
+
+
 ฉบับเสนอ0.1 — 9ตุลาคม2026; ไม่มีassetผลิตหรือapproved; ภาพสร้างภายนอกโดยผู้ใช้
 ใช้ [scene/object](../game-design/SCENE_OBJECT_SPEC.md) เป็นฐาน footprint/front; [พร็อมป์รายชิ้น](../../asset-prompts/prototype/PROTOTYPE_PROMPTS.md)
 

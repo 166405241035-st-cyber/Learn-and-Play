@@ -1,5 +1,5 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": { "noEmit": false, "outDir": ".test-build", "rootDir": "src" },
-  "include": ["src/domain/**/*.ts", "src/content/**/*.ts", "src/content/**/*.json"]
+  "include": ["src/domain/**/*.ts", "src/content/**/*.ts", "src/content/**/*.json", "src/ui/tutorial.ts"]
 }

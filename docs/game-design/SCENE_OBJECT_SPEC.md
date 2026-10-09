@@ -1,5 +1,8 @@
 # ผังฉากและวัตถุต้นแบบ
 
+> Camera revision: physical grid/footprints/interaction cells below remain unchanged. Rendering now supports four quarter-turn views; inverse picking, depth and contact anchor must use the current view. The baseline (x+w,y+h) anchor applies to view 0 only. See [GAME_UI_REVISION](../ui/GAME_UI_REVISION.md).
+
+
 ฉบับเสนอ0.1 — 9ตุลาคม2026; บันทึกแบบที่คุยและแก้จุดพิกัด ยังไม่ทดสอบเกม/ภาพจริง
 
 ## 1. ระบบพิกัด

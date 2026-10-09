@@ -7,6 +7,8 @@ This is the starting point for a new assistant/chat when the original conversati
 
 ## 2. Current verified repository status
 
+**Latest user correction:** user found the prototype looked like a teaching website and requested 7 gameplay/UI changes. Implemented viewport game shell, floating/collapsible project HUD, toolbelt, actual-action tutorial, close character-follow camera, four 90-degree views, in-game settings/fullscreen, updated placeholder geometry and physical pathfinding. See [game UI revision and dependent changes](ui/GAME_UI_REVISION.md). Actual PNG integration, furniture, assessment/portfolio/rewards and save remain pending.
+
 **Latest implementation continuation (9 Oct):** user reviewed design and instructed planning plus execution of the next step. Prototype coding is authorized. Added pinned Vite/TypeScript/Phaser scaffold, transactional in-memory project logic, BFS/click movement and placeholder angled world, guided plan/8 lessons/cart/shop/floor/refund/reset UI. See [first prototype status and next plan](roadmap/FIRST_PROTOTYPE_PROGRESS.md). No furniture placement, assessment, portfolio, reward, durable save, final art/audio or hosting yet. The historical entries below describe earlier inspections.
 
 - At inspection before this documentation change, the public repository used `main` and contained only a 35-byte README (`# Learn-and-Play`, `Educational games`). The connection reported push permission.
@@ -50,7 +52,7 @@ Two valid routes: start with a desired project and discover needed knowledge; or
 If prerequisites are lacking: offer instruction, hints, smaller projects, another activity, or assessment to demonstrate existing knowledge. Basic help remains available. Practice should allow inspection/revision before spending resources and understandable recovery after mistakes.
 
 ## 6. World and control design
-- 2D angled/isometric-like view, fixed camera angle initially, panning and zoom.
+- 2D angled/isometric-like view. Latest user correction: close character-follow camera, four quarter-turn views, no user wheel zoom. View projection changes while physical grid/footprints stay fixed.
 - Click ground to move; click an object/NPC to approach its interaction point and act.
 - Drag/place, move, rotate and store objects during construction; show occupancy and invalid-placement reasons.
 - Switch to a top-down plan for measurement. Do not measure from the angled drawing itself.
@@ -225,6 +227,8 @@ Acceptance: player chooses/revises a real goal; reasoning/instruction visible; n
 - Need hosting selection; GitHub Pages is a suitable proposed static prototype route, not yet enabled or deployed.
 
 - 9 Oct 2026 implementation: user confirmed design review and requested the next plan and execution. Added first scaffold and S1/S2 plus partial S3. No hosting/accounts/paid services added. Current runtime and remaining work are listed separately in FIRST_PROTOTYPE_PROGRESS.md.
+
+- 9 Oct 2026 playtest correction: user supplied screenshot and requested project HUD inside game, clearer tutorial, close follow camera/rotation, in-game settings, fullscreen, obstacle avoidance and new visual design. Implemented those using placeholder geometry; camera rotation needs multi-view PNG production specifications. Update scene/render/input and future placement/save together; original numerical project rules remain unchanged.
 
 ## 18. Message to start a new chat
 > Continue Learn-and-Play: https://github.com/166405241035-st-cyber/Learn-and-Play . Read AGENTS.md, docs/PROJECT_HANDOFF.md and docs/SETUP_WINDOWS.md, then inspect the current files/branch. Summarize implemented versus planned work and continue the recorded next task. Preserve math-first sandbox, explicit teaching, evidence-based portfolio and external asset generation. Do not assume the old chat or claimed implementations exist.
