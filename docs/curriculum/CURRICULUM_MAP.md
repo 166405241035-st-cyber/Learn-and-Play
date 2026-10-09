@@ -1,6 +1,6 @@
 # แผนหลักสูตรคณิตศาสตร์และการเชื่อมโลกเกม
 
-ฉบับออกแบบ 0.1 — 9 ตุลาคม 2026 (Asia/Bangkok)
+ฉบับออกแบบ 0.2 — 9 ตุลาคม 2026 (Asia/Bangkok)
 สถานะ: แผนหลักสูตรและกิจกรรม ยังไม่มีบทเรียนหรือเกมที่รันได้ ยังไม่ผ่านการตรวจครู
 อ่าน [ชุดแรก](FIRST_LEARNING_UNIT.md) และ [การเชื่อมการเล่น](LEARNING_GAMEPLAY.md)
 
@@ -33,7 +33,7 @@
 | S14 | [ม.6เพิ่มเติมเล่ม1](https://proj14.ipst.ac.th/m4-6-math-adv/m6-math-adv-book1/) | ลำดับและอนุกรม; แคลคูลัสเบื้องต้น | 2 |
 | S15 | [ม.6เพิ่มเติมเล่ม2](https://proj14.ipst.ac.th/m4-6-math-adv/m6-math-adv-book2/) | ความหมายของสถิติศาสตร์และข้อมูล; การวิเคราะห์และนำเสนอข้อมูลเชิงคุณภาพ; การวิเคราะห์และนำเสนอข้อมูลเชิงปริมาณ; ตัวแปรสุ่มและการแจกแจงความน่าจะเป็น | 4 |
 
-พื้นฐานก่อนมัธยม เช่น หน่วยและพื้นที่สี่เหลี่ยม ต้องเตรียมเป็นบททบทวน ไม่อ้างว่าเป็นบทใหม่ของ ม.1 เพียงเพราะนำไปใช้ร่วมกับร้อยละ ตัวชี้วัดระดับประถมของชุดนี้ยังต้องตรวจแหล่งเฉพาะ
+พื้นฐานก่อนมัธยม เช่น หน่วยและพื้นที่สี่เหลี่ยม ต้องเตรียมเป็นบททบทวน ไม่อ้างว่าเป็นบทใหม่ของ ม.1 เพียงเพราะนำไปใช้ร่วมกับร้อยละ ตัวชี้วัดประถมบางส่วนของชุดนี้ตรวจใน FIRST_UNIT_ALIGNMENT แล้ว; การจับคู่เต็มและการตรวจครูยังค้าง
 
 ## 3. ความลึกและลำดับผลิต
 
@@ -72,10 +72,13 @@
 
 ## 5. รายการข้อมูลต่อ objective
 
-id/version, title, subjectId, track, sourceId, sourceSection, indicatorCode(ยังไม่ตรวจใช้null), sourceStatus, prerequisiteIds, measurableOutcome, concept, depthBoundary, misconceptions, lessonId, practiceIds, activityIds, assessmentIds, graderKind, evidenceDimensions, educatorStatus, runtimeStatus
+id/version, title, subjectId, track, sourceId, sourceSection, indicatorLinksหลายค่า(ไม่มีรหัสตรงใช้[]), processReferences, sourceStatus, prerequisiteIds, measurableOutcome, concept, depthBoundary, misconceptions, lessonId, practiceIds, activityIds, assessmentIds, graderKind, evidenceDimensions, educatorStatus, runtimeStatus
 
 แยก prerequisite เพื่อแนะนำบททบทวน ไม่ปิดทุกโครงการจากไม่มี badge ผู้รู้แล้วเลือกทำงานประเมินได้ pendingยังใช้บทเรียนและโครงการฝึกได้ แต่ไม่สร้างสิทธิ์ที่ต้องอาศัย confirmed mastery
 
 ## 6. เกณฑ์ก่อนอ้างว่า coverage ครบ
 
 จับคู่มาตรฐาน/ตัวชี้วัด/ผลการเรียนรู้กับแหล่งและฉบับจริง แตกทุกข้อเป็นobjectiveพร้อมขอบเขต รวมบทซ้ำแต่แยกความลึก มีบทสอน/ฝึก/ใช้จริง/งานประเมินที่ตรวจได้ ตรวจการเข้าถึงและครูทบทวน แล้วรายงานช่องที่ยังขาด ห้ามใช้จำนวน59บทหรือการเปิดหน้าแหล่งข้อมูลแทนการตรวจนี้
+
+## 7. ความคืบหน้าการจับคู่ชุดแรก
+[alignment](FIRST_UNIT_ALIGNMENT.md) ตรวจคู่มือฉบับเต็มประถมและมัธยมต้นส่วนที่เกี่ยวข้องแล้ว พบตัวชี้วัดที่รองรับบางส่วนของหน่วย/ทศนิยม/พื้นที่/ร้อยละ พร้อมกรอบกระบวนการสำหรับงบ/สำรอง/ตัดสินใจ; ไม่ใช่full coverageของ8objectiveหรือหลักสูตรทั้งหมด [แบบประเมินรายละเอียด](FIRST_UNIT_ASSESSMENT.md) เพิ่มงานวัดหน่วยและวิธีทศนิยมที่C/Dยังไม่ครอบคลุม สถานะsourceStatusปรับเฉพาะlinkที่ตรวจ ส่วนeducatorStatusยังpendingและruntimeStatusยังnot-implemented

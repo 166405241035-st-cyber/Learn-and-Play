@@ -6,6 +6,7 @@
 
 เริ่มอ่าน [PROJECT_HANDOFF](docs/PROJECT_HANDOFF.md), [AGENTS](AGENTS.md) และ [SETUP_WINDOWS](docs/SETUP_WINDOWS.md)
 
+- [ตัวชี้วัดชุดแรก](docs/curriculum/FIRST_UNIT_ALIGNMENT.md) และ [ช่องคำตอบ/การตรวจ](docs/curriculum/FIRST_UNIT_ASSESSMENT.md)
 - [แผนหลักสูตรคณิตศาสตร์](docs/curriculum/CURRICULUM_MAP.md), [ชุดการเรียนแรก](docs/curriculum/FIRST_LEARNING_UNIT.md) และ [การเชื่อมการเล่น](docs/curriculum/LEARNING_GAMEPLAY.md)
 - [ผลตรวจสถานะและงานพัฒนาถัดไป](docs/technical/CONTINUATION_REVIEW.md)
 - [แบบออกแบบครบวงจร](docs/game-design/COMPREHENSIVE_DESIGN.md)
