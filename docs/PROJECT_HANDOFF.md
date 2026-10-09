@@ -2,6 +2,10 @@
 
 Updated: 9 October 2026 (Asia/Bangkok). Design baseline: 0.6 plus curriculum and prototype detail drafts. Repository: https://github.com/166405241035-st-cyber/Learn-and-Play
 
+## Latest user direction — design before further code
+
+9 October 2026: user clarified that the seven game-experience corrections require a systematic numbered plan, references from other games, and GitHub documentation before runtime changes. Current round is documentation only. Read [GAME_EXPERIENCE_REDESIGN_PLAN](ui/GAME_EXPERIENCE_REDESIGN_PLAN.md): implemented-versus-proposed inventory, references, seven design specifications, tutorial storyboard, acceptance cases, implementation dependencies and change-impact matrix. The existing prototype is retained; earlier changes are history, not approval of the final design. Next: user corrections and detailed wireframes (D6–D7); do not resume S3 or other runtime work without a new explicit instruction. External art remains user-produced; no bulk image production authorized.
+
 ## 1. Purpose of this file
 This is the starting point for a new assistant/chat when the original conversation is unavailable. Read this file, `AGENTS.md`, and the current repository before continuing. This document preserves the user's intent, constraints, proposals, work status and next steps. It is not a claim that the designed game already exists.
 
@@ -193,7 +197,7 @@ Prototype project statuses: draft, active, ready to summarize, portfolio stored,
 
 ## 16. Next steps in order
 
-**Current next action:** follow [FIRST_PROTOTYPE_PROGRESS](roadmap/FIRST_PROTOTYPE_PROGRESS.md): complete S3 furniture placement/access validation, then S4 assessment/portfolio and S5 persistence. Earlier design-only milestones below are retained as context, not current implementation status.
+**Current next action:** review/refine [GAME_EXPERIENCE_REDESIGN_PLAN](ui/GAME_EXPERIENCE_REDESIGN_PLAN.md), then produce detailed wireframes before further coding. S3–S5 in [FIRST_PROTOTYPE_PROGRESS](roadmap/FIRST_PROTOTYPE_PROGRESS.md) remain the deferred implementation backlog. Earlier milestones below are historical context, not current authorization.
 
 
 Comprehensive continuation: [end-to-end design 0.6](game-design/COMPREHENSIVE_DESIGN.md). Covers player journey, sandbox interactions, explicit lessons, assessment/pending review, portfolio, resources, art workflow, saves, extension and staged acceptance. All remain design.
@@ -229,6 +233,8 @@ Acceptance: player chooses/revises a real goal; reasoning/instruction visible; n
 - 9 Oct 2026 implementation: user confirmed design review and requested the next plan and execution. Added first scaffold and S1/S2 plus partial S3. No hosting/accounts/paid services added. Current runtime and remaining work are listed separately in FIRST_PROTOTYPE_PROGRESS.md.
 
 - 9 Oct 2026 playtest correction: user supplied screenshot and requested project HUD inside game, clearer tutorial, close follow camera/rotation, in-game settings, fullscreen, obstacle avoidance and new visual design. Implemented those using placeholder geometry; camera rotation needs multi-view PNG production specifications. Update scene/render/input and future placement/save together; original numerical project rules remain unchanged.
+
+- 9 Oct 2026 latest clarification: user requested a researched, systematic seven-point design plan BEFORE more code. Added GAME_EXPERIENCE_REDESIGN_PLAN and updated authorization/status documents; no runtime changes in this round. Existing prototype retained. Design corrections and wireframes precede any newly authorized implementation.
 
 ## 18. Message to start a new chat
 > Continue Learn-and-Play: https://github.com/166405241035-st-cyber/Learn-and-Play . Read AGENTS.md, docs/PROJECT_HANDOFF.md and docs/SETUP_WINDOWS.md, then inspect the current files/branch. Summarize implemented versus planned work and continue the recorded next task. Preserve math-first sandbox, explicit teaching, evidence-based portfolio and external asset generation. Do not assume the old chat or claimed implementations exist.
