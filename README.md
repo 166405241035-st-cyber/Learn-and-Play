@@ -26,6 +26,7 @@ npm.cmd run dev
 
 เริ่มอ่าน [PROJECT_HANDOFF](docs/PROJECT_HANDOFF.md), [AGENTS](AGENTS.md) และ [SETUP_WINDOWS](docs/SETUP_WINDOWS.md)
 
+- [ตัวเลือกเพิ่มเติม E1–E10 และแผนตรวจภาพคอมมิช](docs/ui/OPTIONAL_GAME_FEATURES_AND_ART_REVIEW.md)
 - [ปรับหน้าหลักเป็นเกมและผลกระทบการหมุนกล้อง](docs/ui/GAME_UI_REVISION.md)
 - [แบบหน้าจอครบวงจร](docs/ui/PROTOTYPE_SCREEN_DESIGN.md), [ผังและวัตถุ](docs/game-design/SCENE_OBJECT_SPEC.md), [แผนที่มุมบน](docs/game-design/SCENE_MAP.svg)
 - [รายการภาพ/เสียง](docs/art-audio/PROTOTYPE_PRODUCTION.md) และ [ตรวจแบบ/ผลกระทบการแก้](docs/roadmap/DESIGN_REVIEW_AND_CHANGE_IMPACT.md)
